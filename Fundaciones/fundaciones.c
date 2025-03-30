@@ -52,29 +52,42 @@ int nFundasMenorQueMonto(struct Fundacion **fundaciones, int montoReferencia) {
 	return nFundacionesMenorQueMonto;
 }
 
+int poblarFundacionesQuitadas(struct Fundacion **quitadas, struct Fundacion **fundaciones, int montoReferencia) {
+	if (quitadas == NULL || fundaciones == NULL) return 1;
+
+	int i, iQuitadas;
+
+	iQuitadas = 0;
+
+	for (i = 0; i < cantFundaciones; i++) {
+		if (fundaciones[i] == NULL) continue;
+
+		if (totalTraspasos(fundaciones[i]) < montoReferencia) {
+			quitadas[iQuitadas] = fundaciones[i];
+			iQuitadas++;
+
+			fundaciones[i] = NULL;
+		}
+	}
+
+	return 0;
+}
+
 struct Fundacion **quitarFundaciones(struct Fundacion **fundaciones, int montoReferencia) {
 	if (fundaciones == NULL) return NULL;
 
-	int nQuitadas, iQuitadas, i;
+	int nQuitadas;
 	struct Fundacion **quitadas;
 
 	nQuitadas = nFundasMenorQueMonto(fundaciones, montoReferencia);
 
 	if (nQuitadas < 1) return NULL;
 
-	iQuitadas = 0;
 	quitadas = (struct Fundacion **)malloc(nQuitadas * sizeof(struct Fundacion *));
 
-	for (i = 0; i < cantFundaciones; i++) {
-		if (fundaciones[i] == NULL) continue;
+	if (quitadas == NULL) return NULL;
 
-		if (totalTraspasos(fundaciones[i]) >= montoReferencia) continue;
-
-		quitadas[iQuitadas] = fundaciones[i];
-		iQuitadas++;
-
-		fundaciones[i] = NULL;
-	}
+	poblarFundacionesQuitadas(quitadas, fundaciones, montoReferencia);
 
 	return quitadas;
 }
