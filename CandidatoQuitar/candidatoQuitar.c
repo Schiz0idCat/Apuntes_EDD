@@ -48,6 +48,8 @@ void compactarArray(struct Candidato **arr, int n) {
 }
 
 struct Candidato *quitarCandidato(struct EleccionesMunicipales *elecciones, int tamConcejales, int tamAlcaldes, char *rutCandidato) {
+	if (elecciones == NULL) return NULL;
+
 	int i;
 	struct Candidato *candidatoQuitado;
 
@@ -56,18 +58,18 @@ struct Candidato *quitarCandidato(struct EleccionesMunicipales *elecciones, int 
 	for (i = 0; i < tamConcejales; i++) {
 		if (elecciones->candidatosConcejales[i] == NULL) continue;
 
-		if (strcmp(elecciones[i].candidatosConcejales[i]->rut, rutCandidato) == 0) {
-			candidatoQuitado = elecciones[i].candidatosConcejales[i];
-			elecciones[i].candidatosConcejales[i] = NULL;
+		if (strcmp(elecciones->candidatosConcejales[i]->rut, rutCandidato) == 0) {
+			candidatoQuitado = elecciones->candidatosConcejales[i];
+			elecciones->candidatosConcejales[i] = NULL;
 
 			return candidatoQuitado;
 		}
 	}
 
 	for (i = 0; i < elecciones->plibreAlcaldes; i++) {
-		if (strcmp(elecciones[i].candidatosAlcalde[i]->rut, rutCandidato) == 0) {
-			candidatoQuitado = elecciones[i].candidatosAlcalde[i];
-			elecciones[i].candidatosAlcalde[i] = NULL;
+		if (strcmp(elecciones->candidatosAlcalde[i]->rut, rutCandidato) == 0) {
+			candidatoQuitado = elecciones->candidatosAlcalde[i];
+			elecciones->candidatosAlcalde[i] = NULL;
 
 			compactarArray(elecciones->candidatosAlcalde, tamAlcaldes);
 
