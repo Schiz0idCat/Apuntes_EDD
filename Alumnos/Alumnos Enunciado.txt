@@ -1,0 +1,22 @@
+Dado un array compacto de struct Alumno.
+
+struct Alumno {
+	char *rut;
+	char *nombre;
+	float promedio;
+};
+
+Implementar las siguientes funciones:
+
+1.- int buscarAlumno(struct Alumno **alumnos, int pLibre, char *rut)
+Esta función recibe una referencia al array de alumnos, la última posición libre y el RUT del alumno buscado.
+Debe retornar 0, si el alumno está en el array. De lo contrario retorna 1.
+
+2.- int agregarAlumnos(struct Alumno **alumnos, int *pLibre, char *rut, char *nombre, float promedio)
+Esta función recibe una referencia al array de alumnos, la última posición libre y los campos de un struct Alumno.
+Debe crear un struct Alumno y agregarlo al array (de forma segura, en términos de memoria).
+Debe retornar 0 si el proceso fue exitoso. De lo contrario retorna 1.
+
+3.- char *getAlumnoMejorPromedio(struct Alumno **alumnos, int pLibre)
+Esta función recibe una referencia al array de alumnos y la última posición libre.
+Debe retornar el RUT del alumno con mejor promedio (en caso de empate, retornar el primero).

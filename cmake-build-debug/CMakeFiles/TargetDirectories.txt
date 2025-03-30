@@ -5,5 +5,6 @@ D:/Programation/Study/Apuntes-EDD/cmake-build-debug/CMakeFiles/dumbo.dir
 D:/Programation/Study/Apuntes-EDD/cmake-build-debug/CMakeFiles/fundaciones.dir
 D:/Programation/Study/Apuntes-EDD/cmake-build-debug/CMakeFiles/inftube.dir
 D:/Programation/Study/Apuntes-EDD/cmake-build-debug/CMakeFiles/loteria.dir
+D:/Programation/Study/Apuntes-EDD/cmake-build-debug/CMakeFiles/Alumnos.dir
 D:/Programation/Study/Apuntes-EDD/cmake-build-debug/CMakeFiles/edit_cache.dir
 D:/Programation/Study/Apuntes-EDD/cmake-build-debug/CMakeFiles/rebuild_cache.dir
