@@ -14,20 +14,20 @@ struct EleccionesMunicipales {
 	int plibreAlcaldes;
 };
 
-int agregarCandidatoAlcalde(struct Candidato **alcaldes, int n, int *pLibre, struct Candidato *nuevo) {
-	if (*pLibre >= n) return 0;
+int agregarCandidatoAlcalde(struct Candidato **alcaldes, int max, int *pLibre, struct Candidato *nuevo) {
+	if (*pLibre >= max) return 1;
 
 	int i;
 
 	for (i = 0; i < *pLibre; i++) {
 		if (alcaldes[i] == NULL || strcmp(alcaldes[i]->rut, nuevo->rut) == 0)
-			return 0;
+			return 1;
 	}
 
 	alcaldes[*pLibre] = nuevo;
 	(*pLibre)++;
 
-	return 1;
+	return 0;
 }
 
 void compactarArray(struct Candidato **arr, int n) {
