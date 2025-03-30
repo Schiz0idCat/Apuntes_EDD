@@ -1,0 +1,36 @@
+Una fundación sin fines de lucro busca ayudar a quienes lo necesitan, pero últimamente ha habido sospechas de que
+los directivos se guardan para sí mismos el dinero que debiesen destinar en ayudas.
+Tu tarea es buscar y eliminar aquellas fundaciones que gasten menos de lo que se estima que debieran.
+
+Lo siguiente es cómo se estructuran las fundaciones.
+(notar que cada fundación contiene un array al historial de traspasos de dinero).
+
+struct Traspaso {
+	int numero;
+	char *nombre;
+	int monto;
+	char *nombreAutorizacion;
+};
+
+struct Fundacion {
+	int id;
+	char *representante;
+	char *nombreFundacion;
+	int pLibre;
+	struct Traspaso **traspasos;
+};
+
+Debes implementar la siguiente función:
+
+1.- struct Fundacion **quitarFundaciones(struct Fundacion **fundaciones, int montoReferencia)
+Recibe una referencia al array de fundaciones y el monto que debieran gastar. Tienes que sacar del array a toda aquella
+fundación cuyos gastos sea menor a montoReferencia. Al mismo tiempo, debes guardar en otro array las fundaciones que
+vayas quitando.
+Por último, debes retornar una referencia al array de las fundaciones quitadas.
+
+
+
+PISTAS:
+1.- Hacer una función que retorne el total montos de todos los traspasos.
+2.- Hacer una función que retorne la cantidad de fundaciones cuyo total de traspasos sea menor que montoReferencia.
+3.- Hacer una función que poble el array de fundaciones quitadas y limpie la fundación quitada del array original.
