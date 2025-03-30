@@ -1,0 +1,29 @@
+Hay un array de candidatos para concejal y otro para alcalde (manejados bajo el mismo struct candidato)
+El array de alcaldes es compacto y hace uso de pLibre
+El array de consejales es no compacto
+
+struct Candidato {
+    char *rut;
+    char *nombre;
+    char *partidoPolitico;
+    char *comunaPostulante;
+};
+
+struct EleccionesMunicipales {
+    struct Candidato **candidatosConcejales;
+    struct Candidato **candidatosAlcaldes;
+    int pLibreAlcaldes;
+};
+
+Se pide implementar la siguiente función:
+
+1.- struct Candidato *determinarAlcaldeGanador(struct Candidato **alcaldes, int pLibreAlcaldes, char *comuna);
+
+Recibe por parámetro una referencia al array de alcandes, su pLibre y el nombre de una comuna.
+La función debe retornar un puntero al candidato ganador para dicha comuna (en caso de empate se retorna el primero).
+En caso de fracaso al determinar al candidato, se debe retornar NULL.
+
+
+
+PISTAS:
+1.- Función que cuente votos en función de la cantidad de veces que un RUT aparece en el array.

@@ -1,0 +1,25 @@
+Un array guarda las compras de los clientes de un supermercado.
+
+Las compras tienen el siguiente struct:
+
+struct Compra {
+    Char *nombreCliente;
+    int montoCompra;
+    Char *fecha;
+};
+
+Se pide implementar la siguiente función:
+
+1.- struct Compra **quitarClientesMenorCantidadCompras(struct Compra **compras, int max);
+
+Recibe una referencia al arreglo de compras y el máximo de posiciones que tiene dicho arreglo.
+Esta función debe quitar a aquellos clientes que tienen compras bajo el promedio de compras de todos los clientes.
+Se debe retornar una referencia a un arreglo de tamaño exacto de punteros a los clientes.
+
+
+
+PISTAS:
+1.- Función que retorne el promedio de montoCompra a lo largo del array de compras.
+2.- Función que retorne el total de compras por debajo de dicho promedio.
+3.- Función que poble un array de comprasBajoPromedio y limpie este puntero del array original.
+4.- Realizar la función pedida.
