@@ -1,0 +1,123 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.30"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Apuntes_EDD",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Alumnos::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Alumnos-Debug-9491d8e00ab12169415f.json",
+					"name" : "Alumnos",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "autosF1::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-autosF1-Debug-402a81f28a9d6808df54.json",
+					"name" : "autosF1",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "candidatoGanador::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-candidatoGanador-Debug-0137c48603f63c4df927.json",
+					"name" : "candidatoGanador",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "candidatoQuitar::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-candidatoQuitar-Debug-8bc7393f9225b7017a68.json",
+					"name" : "candidatoQuitar",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dumbo::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dumbo-Debug-c2bab08cb5e292dbc589.json",
+					"name" : "dumbo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "fundaciones::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-fundaciones-Debug-f1c7a06d2afe6b0d64fd.json",
+					"name" : "fundaciones",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "inftube::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-inftube-Debug-871ee889e130e628bbe7.json",
+					"name" : "inftube",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "loteria::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-loteria-Debug-1cc26519d7ba89ce15cd.json",
+					"name" : "loteria",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/Programation/Study/Apuntes-EDD/cmake-build-debug",
+		"source" : "D:/Programation/Study/Apuntes-EDD"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

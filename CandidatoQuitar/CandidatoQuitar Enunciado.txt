@@ -1,0 +1,29 @@
+Hay un array de candidatos para concejal y otro para alcalde (manejados bajo el mismo struct candidato)
+El array de alcaldes es compacto y hace uso de pLibre
+El array de consejales es no compacto
+
+struct Candidato {
+    char *rut;
+    char *nombre;
+    char *partidoPolitico;
+    char *comunaPostulante;
+};
+
+struct EleccionesMunicipales {
+    struct Candidato **candidatosConcejales;
+    struct Candidato **candidatosAlcaldes;
+    int pLibreAlcaldes;
+};
+
+Se pide implementar las siguientes funciones:
+
+1.- int agregarCandidatoAlcalde(struct Candidato **alcaldes, int n, int *pLibre, struct Candidato *nuevo)
+Se recibe una referencia al array de alcandes, su tamaño máximo, su última posición libre y el candidato a agregar.
+Se debe agregar este nuevo candidato al array (de forma segura en términos de memoria).
+Se debe retornar 0 en caso de éxito. En caso contrario, retornar 1.
+
+2.- struct Candidato *quitarCandidato(struct EleccionesMunicipales *elecciones, int tamConcejales, int tamAlcaldes, char *rutCandidato)
+Se recibe el struct Elecciones municipales (que maneja los array de alcades y concejales), el tamaño máximo del array de
+concejales y de alcaldes, por último, el RUT del candidato a quitar.
+Se debe buscar en ambos arrays al candidato a quitar, y quitarlo (de forma segura, en términos de memoria). Además,
+en caso de que se haya quitado del array compacto, se tiene que volver a compactar.
