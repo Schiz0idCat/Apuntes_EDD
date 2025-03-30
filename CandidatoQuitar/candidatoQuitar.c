@@ -14,18 +14,18 @@ struct EleccionesMunicipales {
 	int plibreAlcaldes;
 };
 
-int agregarCandidatoAlcalde(struct Candidato **alcaldes, int n, int pLibre, struct Candidato *nuevo) {
-	if (pLibre == n)
-		return 0;
+int agregarCandidatoAlcalde(struct Candidato **alcaldes, int n, int *pLibre, struct Candidato *nuevo) {
+	if (*pLibre >= n) return 0;
 
 	int i;
 
-	for (i = 0; i < pLibre; i++) {
+	for (i = 0; i < *pLibre; i++) {
 		if (alcaldes[i] == NULL || strcmp(alcaldes[i]->rut, nuevo->rut) == 0)
 			return 0;
 	}
 
-	alcaldes[pLibre] = nuevo;
+	alcaldes[*pLibre] = nuevo;
+	(*pLibre)++;
 
 	return 1;
 }
