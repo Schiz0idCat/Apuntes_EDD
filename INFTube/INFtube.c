@@ -41,8 +41,8 @@ struct INFTube {
 	struct Admin **administradores;
 };
 
-void procesarVideosInfracciones(struct Usuario *usuario) {
-	if (usuario == NULL || usuario->videosSubidos == NULL) return;
+int procesarVideosInfracciones(struct Usuario *usuario) {
+	if (usuario == NULL || usuario->videosSubidos == NULL) return 1;
 
 	int maxVideos, i;
 
@@ -58,7 +58,7 @@ void procesarVideosInfracciones(struct Usuario *usuario) {
 			maxVideos = MAX_C;
 			break;
 		default:
-			return;
+			return 1;
 	}
 
 	for (i = 0; i < maxVideos; i++) { // recorriendo la lista de videos
@@ -72,10 +72,12 @@ void procesarVideosInfracciones(struct Usuario *usuario) {
 		video = NULL;
 		usuario->infracciones++;
 	}
+
+	return 0;
 }
 
-void quitarVideosInfraccion(struct INFTube *itube) {
-	if (itube == NULL) return;
+int quitarVideosInfraccion(struct INFTube *itube) {
+	if (itube == NULL) return 1;
 
 	int i;
 
@@ -91,6 +93,8 @@ void quitarVideosInfraccion(struct INFTube *itube) {
 
 		usuario = NULL;
 	}
+
+	return 0;
 }
 
 int main() {
