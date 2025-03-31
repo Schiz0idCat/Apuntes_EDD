@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 
 #define MAX 46352
@@ -26,7 +25,7 @@ struct Carton {
 };
 
 int comprobarGanador(struct Cliente *cliente, char *numGanador, char *nombre, char *apellido) {
-	if (cliente == NULL || numGanador == NULL || nombre == NULL || apellido == NULL) return 0
+	if (cliente == NULL || numGanador == NULL || nombre == NULL || apellido == NULL) return 0;
 
 	int i;
 
