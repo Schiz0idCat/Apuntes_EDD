@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 
 #define MAX_USERS 10000
@@ -43,6 +42,8 @@ struct INFTube {
 };
 
 void procesarVideosInfracciones(struct Usuario *usuario) {
+	if (usuario == NULL || usuario->videosSubidos == NULL) return;
+
 	int maxVideos, i;
 
 	// detectar el largo del array
@@ -74,6 +75,8 @@ void procesarVideosInfracciones(struct Usuario *usuario) {
 }
 
 void quitarVideosInfraccion(struct INFTube *itube) {
+	if (itube == NULL) return;
+
 	int i;
 
 	for (i = 0; i < MAX_USERS; i++) { // recorriendo la lista de usuarios
