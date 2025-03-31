@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "inftube.exe"
+			"path" : "candidatoGanador.exe"
 		},
 		{
-			"path" : "inftube.pdb"
+			"path" : "candidatoGanador.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -27,7 +27,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 11,
+				"line" : 7,
 				"parent" : 0
 			}
 		]
@@ -56,7 +56,7 @@
 			]
 		}
 	],
-	"id" : "inftube::@6890427a1f51a3e7e1df",
+	"id" : "candidatoGanador::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -76,8 +76,8 @@
 		],
 		"language" : "C"
 	},
-	"name" : "inftube",
-	"nameOnDisk" : "inftube.exe",
+	"name" : "candidatoGanador",
+	"nameOnDisk" : "candidatoGanador.exe",
 	"paths" : 
 	{
 		"build" : ".",
@@ -98,7 +98,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "INFTube/INFtube.c",
+			"path" : "Modulo_1/Ejercicios/CandidatoGanador/candidatoGanador.c",
 			"sourceGroupIndex" : 0
 		}
 	],

@@ -22,7 +22,8 @@
 						4,
 						5,
 						6,
-						7
+						7,
+						8
 					]
 				}
 			],
@@ -44,7 +45,8 @@
 						4,
 						5,
 						6,
-						7
+						7,
+						8
 					]
 				}
 			],
@@ -53,56 +55,63 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Alumnos::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Alumnos-Debug-9491d8e00ab12169415f.json",
+					"jsonFile" : "target-Alumnos-Debug-52be8f9fcee381df4697.json",
 					"name" : "Alumnos",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "autosF1::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-autosF1-Debug-402a81f28a9d6808df54.json",
+					"jsonFile" : "target-autosF1-Debug-da47d7a3243309afcfe0.json",
 					"name" : "autosF1",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "candidatoGanador::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-candidatoGanador-Debug-0137c48603f63c4df927.json",
+					"jsonFile" : "target-candidatoGanador-Debug-d24a84a53e0aab654e14.json",
 					"name" : "candidatoGanador",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "candidatoQuitar::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-candidatoQuitar-Debug-8bc7393f9225b7017a68.json",
+					"jsonFile" : "target-candidatoQuitar-Debug-859ddffcbf8592105131.json",
 					"name" : "candidatoQuitar",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
+					"id" : "controlCatedra_1::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-controlCatedra_1-Debug-0042d9f716482a272afb.json",
+					"name" : "controlCatedra_1",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
 					"id" : "dumbo::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-dumbo-Debug-c2bab08cb5e292dbc589.json",
+					"jsonFile" : "target-dumbo-Debug-4061f83363c78e874caa.json",
 					"name" : "dumbo",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "fundaciones::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-fundaciones-Debug-f1c7a06d2afe6b0d64fd.json",
+					"jsonFile" : "target-fundaciones-Debug-1e93df38d926082c3e57.json",
 					"name" : "fundaciones",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "inftube::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-inftube-Debug-871ee889e130e628bbe7.json",
+					"jsonFile" : "target-inftube-Debug-0e6fec5d702f4ae1138d.json",
 					"name" : "inftube",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "loteria::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-loteria-Debug-1cc26519d7ba89ce15cd.json",
+					"jsonFile" : "target-loteria-Debug-2bd7757afc48ec7202a0.json",
 					"name" : "loteria",
 					"projectIndex" : 0
 				}

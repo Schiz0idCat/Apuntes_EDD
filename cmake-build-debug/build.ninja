@@ -49,11 +49,11 @@ cmake_ninja_workdir = D$:/Programation/Study/Apuntes-EDD/cmake-build-debug/
 
 build cmake_object_order_depends_target_autosF1: phony || .
 
-build CMakeFiles/autosF1.dir/AutosF1/autosF1.c.obj: C_COMPILER__autosF1_unscanned_Debug D$:/Programation/Study/Apuntes-EDD/AutosF1/autosF1.c || cmake_object_order_depends_target_autosF1
-  DEP_FILE = CMakeFiles\autosF1.dir\AutosF1\autosF1.c.obj.d
+build CMakeFiles/autosF1.dir/Modulo_1/Ejercicios/AutosF1/autosF1.c.obj: C_COMPILER__autosF1_unscanned_Debug D$:/Programation/Study/Apuntes-EDD/Modulo_1/Ejercicios/AutosF1/autosF1.c || cmake_object_order_depends_target_autosF1
+  DEP_FILE = CMakeFiles\autosF1.dir\Modulo_1\Ejercicios\AutosF1\autosF1.c.obj.d
   FLAGS = -g -std=gnu90 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\autosF1.dir
-  OBJECT_FILE_DIR = CMakeFiles\autosF1.dir\AutosF1
+  OBJECT_FILE_DIR = CMakeFiles\autosF1.dir\Modulo_1\Ejercicios\AutosF1
 
 
 # =============================================================================
@@ -63,7 +63,7 @@ build CMakeFiles/autosF1.dir/AutosF1/autosF1.c.obj: C_COMPILER__autosF1_unscanne
 #############################################
 # Link the executable autosF1.exe
 
-build autosF1.exe: C_EXECUTABLE_LINKER__autosF1_Debug CMakeFiles/autosF1.dir/AutosF1/autosF1.c.obj
+build autosF1.exe: C_EXECUTABLE_LINKER__autosF1_Debug CMakeFiles/autosF1.dir/Modulo_1/Ejercicios/AutosF1/autosF1.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\autosF1.dir
@@ -82,11 +82,11 @@ build autosF1.exe: C_EXECUTABLE_LINKER__autosF1_Debug CMakeFiles/autosF1.dir/Aut
 
 build cmake_object_order_depends_target_candidatoGanador: phony || .
 
-build CMakeFiles/candidatoGanador.dir/CandidatoGanador/candidatoGanador.c.obj: C_COMPILER__candidatoGanador_unscanned_Debug D$:/Programation/Study/Apuntes-EDD/CandidatoGanador/candidatoGanador.c || cmake_object_order_depends_target_candidatoGanador
-  DEP_FILE = CMakeFiles\candidatoGanador.dir\CandidatoGanador\candidatoGanador.c.obj.d
+build CMakeFiles/candidatoGanador.dir/Modulo_1/Ejercicios/CandidatoGanador/candidatoGanador.c.obj: C_COMPILER__candidatoGanador_unscanned_Debug D$:/Programation/Study/Apuntes-EDD/Modulo_1/Ejercicios/CandidatoGanador/candidatoGanador.c || cmake_object_order_depends_target_candidatoGanador
+  DEP_FILE = CMakeFiles\candidatoGanador.dir\Modulo_1\Ejercicios\CandidatoGanador\candidatoGanador.c.obj.d
   FLAGS = -g -std=gnu90 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\candidatoGanador.dir
-  OBJECT_FILE_DIR = CMakeFiles\candidatoGanador.dir\CandidatoGanador
+  OBJECT_FILE_DIR = CMakeFiles\candidatoGanador.dir\Modulo_1\Ejercicios\CandidatoGanador
 
 
 # =============================================================================
@@ -96,7 +96,7 @@ build CMakeFiles/candidatoGanador.dir/CandidatoGanador/candidatoGanador.c.obj: C
 #############################################
 # Link the executable candidatoGanador.exe
 
-build candidatoGanador.exe: C_EXECUTABLE_LINKER__candidatoGanador_Debug CMakeFiles/candidatoGanador.dir/CandidatoGanador/candidatoGanador.c.obj
+build candidatoGanador.exe: C_EXECUTABLE_LINKER__candidatoGanador_Debug CMakeFiles/candidatoGanador.dir/Modulo_1/Ejercicios/CandidatoGanador/candidatoGanador.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\candidatoGanador.dir
@@ -115,11 +115,11 @@ build candidatoGanador.exe: C_EXECUTABLE_LINKER__candidatoGanador_Debug CMakeFil
 
 build cmake_object_order_depends_target_candidatoQuitar: phony || .
 
-build CMakeFiles/candidatoQuitar.dir/CandidatoQuitar/candidatoQuitar.c.obj: C_COMPILER__candidatoQuitar_unscanned_Debug D$:/Programation/Study/Apuntes-EDD/CandidatoQuitar/candidatoQuitar.c || cmake_object_order_depends_target_candidatoQuitar
-  DEP_FILE = CMakeFiles\candidatoQuitar.dir\CandidatoQuitar\candidatoQuitar.c.obj.d
+build CMakeFiles/candidatoQuitar.dir/Modulo_1/Ejercicios/CandidatoQuitar/candidatoQuitar.c.obj: C_COMPILER__candidatoQuitar_unscanned_Debug D$:/Programation/Study/Apuntes-EDD/Modulo_1/Ejercicios/CandidatoQuitar/candidatoQuitar.c || cmake_object_order_depends_target_candidatoQuitar
+  DEP_FILE = CMakeFiles\candidatoQuitar.dir\Modulo_1\Ejercicios\CandidatoQuitar\candidatoQuitar.c.obj.d
   FLAGS = -g -std=gnu90 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\candidatoQuitar.dir
-  OBJECT_FILE_DIR = CMakeFiles\candidatoQuitar.dir\CandidatoQuitar
+  OBJECT_FILE_DIR = CMakeFiles\candidatoQuitar.dir\Modulo_1\Ejercicios\CandidatoQuitar
 
 
 # =============================================================================
@@ -129,7 +129,7 @@ build CMakeFiles/candidatoQuitar.dir/CandidatoQuitar/candidatoQuitar.c.obj: C_CO
 #############################################
 # Link the executable candidatoQuitar.exe
 
-build candidatoQuitar.exe: C_EXECUTABLE_LINKER__candidatoQuitar_Debug CMakeFiles/candidatoQuitar.dir/CandidatoQuitar/candidatoQuitar.c.obj
+build candidatoQuitar.exe: C_EXECUTABLE_LINKER__candidatoQuitar_Debug CMakeFiles/candidatoQuitar.dir/Modulo_1/Ejercicios/CandidatoQuitar/candidatoQuitar.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\candidatoQuitar.dir
@@ -148,11 +148,11 @@ build candidatoQuitar.exe: C_EXECUTABLE_LINKER__candidatoQuitar_Debug CMakeFiles
 
 build cmake_object_order_depends_target_dumbo: phony || .
 
-build CMakeFiles/dumbo.dir/Dumbo/dumbo.c.obj: C_COMPILER__dumbo_unscanned_Debug D$:/Programation/Study/Apuntes-EDD/Dumbo/dumbo.c || cmake_object_order_depends_target_dumbo
-  DEP_FILE = CMakeFiles\dumbo.dir\Dumbo\dumbo.c.obj.d
+build CMakeFiles/dumbo.dir/Modulo_1/Ejercicios/Dumbo/dumbo.c.obj: C_COMPILER__dumbo_unscanned_Debug D$:/Programation/Study/Apuntes-EDD/Modulo_1/Ejercicios/Dumbo/dumbo.c || cmake_object_order_depends_target_dumbo
+  DEP_FILE = CMakeFiles\dumbo.dir\Modulo_1\Ejercicios\Dumbo\dumbo.c.obj.d
   FLAGS = -g -std=gnu90 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\dumbo.dir
-  OBJECT_FILE_DIR = CMakeFiles\dumbo.dir\Dumbo
+  OBJECT_FILE_DIR = CMakeFiles\dumbo.dir\Modulo_1\Ejercicios\Dumbo
 
 
 # =============================================================================
@@ -162,7 +162,7 @@ build CMakeFiles/dumbo.dir/Dumbo/dumbo.c.obj: C_COMPILER__dumbo_unscanned_Debug 
 #############################################
 # Link the executable dumbo.exe
 
-build dumbo.exe: C_EXECUTABLE_LINKER__dumbo_Debug CMakeFiles/dumbo.dir/Dumbo/dumbo.c.obj
+build dumbo.exe: C_EXECUTABLE_LINKER__dumbo_Debug CMakeFiles/dumbo.dir/Modulo_1/Ejercicios/Dumbo/dumbo.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\dumbo.dir
@@ -181,11 +181,11 @@ build dumbo.exe: C_EXECUTABLE_LINKER__dumbo_Debug CMakeFiles/dumbo.dir/Dumbo/dum
 
 build cmake_object_order_depends_target_fundaciones: phony || .
 
-build CMakeFiles/fundaciones.dir/Fundaciones/fundaciones.c.obj: C_COMPILER__fundaciones_unscanned_Debug D$:/Programation/Study/Apuntes-EDD/Fundaciones/fundaciones.c || cmake_object_order_depends_target_fundaciones
-  DEP_FILE = CMakeFiles\fundaciones.dir\Fundaciones\fundaciones.c.obj.d
+build CMakeFiles/fundaciones.dir/Modulo_1/Ejercicios/Fundaciones/fundaciones.c.obj: C_COMPILER__fundaciones_unscanned_Debug D$:/Programation/Study/Apuntes-EDD/Modulo_1/Ejercicios/Fundaciones/fundaciones.c || cmake_object_order_depends_target_fundaciones
+  DEP_FILE = CMakeFiles\fundaciones.dir\Modulo_1\Ejercicios\Fundaciones\fundaciones.c.obj.d
   FLAGS = -g -std=gnu90 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\fundaciones.dir
-  OBJECT_FILE_DIR = CMakeFiles\fundaciones.dir\Fundaciones
+  OBJECT_FILE_DIR = CMakeFiles\fundaciones.dir\Modulo_1\Ejercicios\Fundaciones
 
 
 # =============================================================================
@@ -195,7 +195,7 @@ build CMakeFiles/fundaciones.dir/Fundaciones/fundaciones.c.obj: C_COMPILER__fund
 #############################################
 # Link the executable fundaciones.exe
 
-build fundaciones.exe: C_EXECUTABLE_LINKER__fundaciones_Debug CMakeFiles/fundaciones.dir/Fundaciones/fundaciones.c.obj
+build fundaciones.exe: C_EXECUTABLE_LINKER__fundaciones_Debug CMakeFiles/fundaciones.dir/Modulo_1/Ejercicios/Fundaciones/fundaciones.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\fundaciones.dir
@@ -214,11 +214,11 @@ build fundaciones.exe: C_EXECUTABLE_LINKER__fundaciones_Debug CMakeFiles/fundaci
 
 build cmake_object_order_depends_target_inftube: phony || .
 
-build CMakeFiles/inftube.dir/INFTube/INFtube.c.obj: C_COMPILER__inftube_unscanned_Debug D$:/Programation/Study/Apuntes-EDD/INFTube/INFtube.c || cmake_object_order_depends_target_inftube
-  DEP_FILE = CMakeFiles\inftube.dir\INFTube\INFtube.c.obj.d
+build CMakeFiles/inftube.dir/Modulo_1/Ejercicios/INFTube/INFtube.c.obj: C_COMPILER__inftube_unscanned_Debug D$:/Programation/Study/Apuntes-EDD/Modulo_1/Ejercicios/INFTube/INFtube.c || cmake_object_order_depends_target_inftube
+  DEP_FILE = CMakeFiles\inftube.dir\Modulo_1\Ejercicios\INFTube\INFtube.c.obj.d
   FLAGS = -g -std=gnu90 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\inftube.dir
-  OBJECT_FILE_DIR = CMakeFiles\inftube.dir\INFTube
+  OBJECT_FILE_DIR = CMakeFiles\inftube.dir\Modulo_1\Ejercicios\INFTube
 
 
 # =============================================================================
@@ -228,7 +228,7 @@ build CMakeFiles/inftube.dir/INFTube/INFtube.c.obj: C_COMPILER__inftube_unscanne
 #############################################
 # Link the executable inftube.exe
 
-build inftube.exe: C_EXECUTABLE_LINKER__inftube_Debug CMakeFiles/inftube.dir/INFTube/INFtube.c.obj
+build inftube.exe: C_EXECUTABLE_LINKER__inftube_Debug CMakeFiles/inftube.dir/Modulo_1/Ejercicios/INFTube/INFtube.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\inftube.dir
@@ -247,11 +247,11 @@ build inftube.exe: C_EXECUTABLE_LINKER__inftube_Debug CMakeFiles/inftube.dir/INF
 
 build cmake_object_order_depends_target_loteria: phony || .
 
-build CMakeFiles/loteria.dir/Loteria/loteriaV2.c.obj: C_COMPILER__loteria_unscanned_Debug D$:/Programation/Study/Apuntes-EDD/Loteria/loteriaV2.c || cmake_object_order_depends_target_loteria
-  DEP_FILE = CMakeFiles\loteria.dir\Loteria\loteriaV2.c.obj.d
+build CMakeFiles/loteria.dir/Modulo_1/Ejercicios/Loteria/loteriaV2.c.obj: C_COMPILER__loteria_unscanned_Debug D$:/Programation/Study/Apuntes-EDD/Modulo_1/Ejercicios/Loteria/loteriaV2.c || cmake_object_order_depends_target_loteria
+  DEP_FILE = CMakeFiles\loteria.dir\Modulo_1\Ejercicios\Loteria\loteriaV2.c.obj.d
   FLAGS = -g -std=gnu90 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\loteria.dir
-  OBJECT_FILE_DIR = CMakeFiles\loteria.dir\Loteria
+  OBJECT_FILE_DIR = CMakeFiles\loteria.dir\Modulo_1\Ejercicios\Loteria
 
 
 # =============================================================================
@@ -261,7 +261,7 @@ build CMakeFiles/loteria.dir/Loteria/loteriaV2.c.obj: C_COMPILER__loteria_unscan
 #############################################
 # Link the executable loteria.exe
 
-build loteria.exe: C_EXECUTABLE_LINKER__loteria_Debug CMakeFiles/loteria.dir/Loteria/loteriaV2.c.obj
+build loteria.exe: C_EXECUTABLE_LINKER__loteria_Debug CMakeFiles/loteria.dir/Modulo_1/Ejercicios/Loteria/loteriaV2.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\loteria.dir
@@ -280,11 +280,11 @@ build loteria.exe: C_EXECUTABLE_LINKER__loteria_Debug CMakeFiles/loteria.dir/Lot
 
 build cmake_object_order_depends_target_Alumnos: phony || .
 
-build CMakeFiles/Alumnos.dir/Alumnos/Alumnos.c.obj: C_COMPILER__Alumnos_unscanned_Debug D$:/Programation/Study/Apuntes-EDD/Alumnos/Alumnos.c || cmake_object_order_depends_target_Alumnos
-  DEP_FILE = CMakeFiles\Alumnos.dir\Alumnos\Alumnos.c.obj.d
+build CMakeFiles/Alumnos.dir/Modulo_1/Ejercicios/Alumnos/Alumnos.c.obj: C_COMPILER__Alumnos_unscanned_Debug D$:/Programation/Study/Apuntes-EDD/Modulo_1/Ejercicios/Alumnos/Alumnos.c || cmake_object_order_depends_target_Alumnos
+  DEP_FILE = CMakeFiles\Alumnos.dir\Modulo_1\Ejercicios\Alumnos\Alumnos.c.obj.d
   FLAGS = -g -std=gnu90 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\Alumnos.dir
-  OBJECT_FILE_DIR = CMakeFiles\Alumnos.dir\Alumnos
+  OBJECT_FILE_DIR = CMakeFiles\Alumnos.dir\Modulo_1\Ejercicios\Alumnos
 
 
 # =============================================================================
@@ -294,7 +294,7 @@ build CMakeFiles/Alumnos.dir/Alumnos/Alumnos.c.obj: C_COMPILER__Alumnos_unscanne
 #############################################
 # Link the executable Alumnos.exe
 
-build Alumnos.exe: C_EXECUTABLE_LINKER__Alumnos_Debug CMakeFiles/Alumnos.dir/Alumnos/Alumnos.c.obj
+build Alumnos.exe: C_EXECUTABLE_LINKER__Alumnos_Debug CMakeFiles/Alumnos.dir/Modulo_1/Ejercicios/Alumnos/Alumnos.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Alumnos.dir
@@ -303,6 +303,39 @@ build Alumnos.exe: C_EXECUTABLE_LINKER__Alumnos_Debug CMakeFiles/Alumnos.dir/Alu
   TARGET_FILE = Alumnos.exe
   TARGET_IMPLIB = libAlumnos.dll.a
   TARGET_PDB = Alumnos.exe.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target controlCatedra_1
+
+
+#############################################
+# Order-only phony target for controlCatedra_1
+
+build cmake_object_order_depends_target_controlCatedra_1: phony || .
+
+build CMakeFiles/controlCatedra_1.dir/Modulo_1/Evaluaciones/Control_1/controlCatedra_1.c.obj: C_COMPILER__controlCatedra_1_unscanned_Debug D$:/Programation/Study/Apuntes-EDD/Modulo_1/Evaluaciones/Control_1/controlCatedra_1.c || cmake_object_order_depends_target_controlCatedra_1
+  DEP_FILE = CMakeFiles\controlCatedra_1.dir\Modulo_1\Evaluaciones\Control_1\controlCatedra_1.c.obj.d
+  FLAGS = -g -std=gnu90 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\controlCatedra_1.dir
+  OBJECT_FILE_DIR = CMakeFiles\controlCatedra_1.dir\Modulo_1\Evaluaciones\Control_1
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target controlCatedra_1
+
+
+#############################################
+# Link the executable controlCatedra_1.exe
+
+build controlCatedra_1.exe: C_EXECUTABLE_LINKER__controlCatedra_1_Debug CMakeFiles/controlCatedra_1.dir/Modulo_1/Evaluaciones/Control_1/controlCatedra_1.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\controlCatedra_1.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = controlCatedra_1.exe
+  TARGET_IMPLIB = libcontrolCatedra_1.dll.a
+  TARGET_PDB = controlCatedra_1.exe.dbg
 
 
 #############################################
@@ -338,6 +371,8 @@ build candidatoGanador: phony candidatoGanador.exe
 
 build candidatoQuitar: phony candidatoQuitar.exe
 
+build controlCatedra_1: phony controlCatedra_1.exe
+
 build dumbo: phony dumbo.exe
 
 build fundaciones: phony fundaciones.exe
@@ -354,7 +389,7 @@ build loteria: phony loteria.exe
 #############################################
 # Folder: D:/Programation/Study/Apuntes-EDD/cmake-build-debug
 
-build all: phony autosF1.exe candidatoGanador.exe candidatoQuitar.exe dumbo.exe fundaciones.exe inftube.exe loteria.exe Alumnos.exe
+build all: phony autosF1.exe candidatoGanador.exe candidatoQuitar.exe dumbo.exe fundaciones.exe inftube.exe loteria.exe Alumnos.exe controlCatedra_1.exe
 
 # =============================================================================
 # Built-in targets

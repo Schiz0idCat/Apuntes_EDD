@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "Alumnos.exe"
+			"path" : "inftube.exe"
 		},
 		{
-			"path" : "Alumnos.pdb"
+			"path" : "inftube.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -27,7 +27,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 13,
+				"line" : 11,
 				"parent" : 0
 			}
 		]
@@ -56,7 +56,7 @@
 			]
 		}
 	],
-	"id" : "Alumnos::@6890427a1f51a3e7e1df",
+	"id" : "inftube::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -76,8 +76,8 @@
 		],
 		"language" : "C"
 	},
-	"name" : "Alumnos",
-	"nameOnDisk" : "Alumnos.exe",
+	"name" : "inftube",
+	"nameOnDisk" : "inftube.exe",
 	"paths" : 
 	{
 		"build" : ".",
@@ -98,7 +98,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "Alumnos/Alumnos.c",
+			"path" : "Modulo_1/Ejercicios/INFTube/INFtube.c",
 			"sourceGroupIndex" : 0
 		}
 	],
