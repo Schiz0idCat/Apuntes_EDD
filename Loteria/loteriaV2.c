@@ -30,12 +30,9 @@ int comprobarGanador(struct Cliente *cliente, char *numGanador, char *nombre, ch
 	int i;
 
 	for (i = 0; i < cliente->pLibre; i++) {
-		struct Carton **carton;
-		carton = &cliente->comprados[i]; // desempaquetamiento
-
-		if (carton == NULL ||
-			(*carton)->tipoSorteo != 'A' ||
-			strcmp((*carton)->numSorteo, numGanador) != 0 ||
+		if (cliente->comprados[i] == NULL ||
+			cliente->comprados[i]->tipoSorteo != 'A' ||
+			strcmp(cliente->comprados[i]->numSorteo, numGanador) != 0 ||
 			strcmp(cliente->nombre, nombre) != 0 ||
 			strcmp(cliente->apellido, apellido) != 0)
 				continue;
