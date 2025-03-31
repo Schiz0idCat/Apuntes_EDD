@@ -1,0 +1,39 @@
+Spotify es una aplicación de música de streaming que da la posibilidad a sus usuarios de crear playlists de sus
+canciones favoritas.
+
+Dadas las estructuras que se mostrarán a continuación, tu tarea es crear un array compacto de tamaño exacto que
+contenga todas las playlists con duración mayor a 1 hora.
+
+#define MAX_CANCIONES 1000
+
+struct Spotify {
+    char *nombreCEO;
+    struct Playlist **playlists; // arreglo compacto de tamaño MAX_CANCIONES
+    int pLibre;
+};
+
+struct Playlist {
+    char *nombre;
+    char *descripcion;
+    struct Cancion **canciones; // arreglo no compacto de tamaño MAX_CANCIONES
+};
+
+struct Cancion {
+    char *nombre;
+    char *artista;
+    int duracion; // en segundos
+};
+
+Debes implementar la siguiente función:
+
+1.- struct Playlist **getPlaylistsLargas(struct Spotify *spotify)
+Recibe por parámetro una referencia a spotify, que contiene un array compacto de playlists, que a su vez contiene un
+array no compacto de canciones.
+Debes retornar un array compacto de tamaño exacto de todas las playlists cuya duración sea mayor a 1 hora.
+
+
+
+PISTAS:
+1.- Crear función que retorna la duración de una playlist.
+2.- Crear función que retorne la cantidad de playlists cuya duración es mayor a una hora.
+3.- Crear función que poble un array de playlists largas.

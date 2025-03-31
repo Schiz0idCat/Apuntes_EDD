@@ -286,6 +286,12 @@ build CMakeFiles/Alumnos.dir/Modulo_1/Ejercicios/Alumnos/Alumnos.c.obj: C_COMPIL
   OBJECT_DIR = CMakeFiles\Alumnos.dir
   OBJECT_FILE_DIR = CMakeFiles\Alumnos.dir\Modulo_1\Ejercicios\Alumnos
 
+build CMakeFiles/Alumnos.dir/Modulo_1/Ejercicios/Spotify/spotify.c.obj: C_COMPILER__Alumnos_unscanned_Debug D$:/Programation/Study/Apuntes-EDD/Modulo_1/Ejercicios/Spotify/spotify.c || cmake_object_order_depends_target_Alumnos
+  DEP_FILE = CMakeFiles\Alumnos.dir\Modulo_1\Ejercicios\Spotify\spotify.c.obj.d
+  FLAGS = -g -std=gnu90 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Alumnos.dir
+  OBJECT_FILE_DIR = CMakeFiles\Alumnos.dir\Modulo_1\Ejercicios\Spotify
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Alumnos
@@ -294,7 +300,7 @@ build CMakeFiles/Alumnos.dir/Modulo_1/Ejercicios/Alumnos/Alumnos.c.obj: C_COMPIL
 #############################################
 # Link the executable Alumnos.exe
 
-build Alumnos.exe: C_EXECUTABLE_LINKER__Alumnos_Debug CMakeFiles/Alumnos.dir/Modulo_1/Ejercicios/Alumnos/Alumnos.c.obj
+build Alumnos.exe: C_EXECUTABLE_LINKER__Alumnos_Debug CMakeFiles/Alumnos.dir/Modulo_1/Ejercicios/Alumnos/Alumnos.c.obj CMakeFiles/Alumnos.dir/Modulo_1/Ejercicios/Spotify/spotify.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Alumnos.dir
@@ -336,6 +342,39 @@ build controlCatedra_1.exe: C_EXECUTABLE_LINKER__controlCatedra_1_Debug CMakeFil
   TARGET_FILE = controlCatedra_1.exe
   TARGET_IMPLIB = libcontrolCatedra_1.dll.a
   TARGET_PDB = controlCatedra_1.exe.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target spotify
+
+
+#############################################
+# Order-only phony target for spotify
+
+build cmake_object_order_depends_target_spotify: phony || .
+
+build CMakeFiles/spotify.dir/Modulo_1/Ejercicios/Spotify/spotify.c.obj: C_COMPILER__spotify_unscanned_Debug D$:/Programation/Study/Apuntes-EDD/Modulo_1/Ejercicios/Spotify/spotify.c || cmake_object_order_depends_target_spotify
+  DEP_FILE = CMakeFiles\spotify.dir\Modulo_1\Ejercicios\Spotify\spotify.c.obj.d
+  FLAGS = -g -std=gnu90 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\spotify.dir
+  OBJECT_FILE_DIR = CMakeFiles\spotify.dir\Modulo_1\Ejercicios\Spotify
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target spotify
+
+
+#############################################
+# Link the executable spotify.exe
+
+build spotify.exe: C_EXECUTABLE_LINKER__spotify_Debug CMakeFiles/spotify.dir/Modulo_1/Ejercicios/Spotify/spotify.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\spotify.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = spotify.exe
+  TARGET_IMPLIB = libspotify.dll.a
+  TARGET_PDB = spotify.exe.dbg
 
 
 #############################################
@@ -381,6 +420,8 @@ build inftube: phony inftube.exe
 
 build loteria: phony loteria.exe
 
+build spotify: phony spotify.exe
+
 # =============================================================================
 # Folder targets.
 
@@ -389,7 +430,7 @@ build loteria: phony loteria.exe
 #############################################
 # Folder: D:/Programation/Study/Apuntes-EDD/cmake-build-debug
 
-build all: phony autosF1.exe candidatoGanador.exe candidatoQuitar.exe dumbo.exe fundaciones.exe inftube.exe loteria.exe Alumnos.exe controlCatedra_1.exe
+build all: phony autosF1.exe candidatoGanador.exe candidatoQuitar.exe dumbo.exe fundaciones.exe inftube.exe loteria.exe Alumnos.exe controlCatedra_1.exe spotify.exe
 
 # =============================================================================
 # Built-in targets

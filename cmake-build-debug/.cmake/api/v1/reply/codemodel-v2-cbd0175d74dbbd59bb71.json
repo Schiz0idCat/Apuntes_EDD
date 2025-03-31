@@ -23,7 +23,8 @@
 						5,
 						6,
 						7,
-						8
+						8,
+						9
 					]
 				}
 			],
@@ -46,7 +47,8 @@
 						5,
 						6,
 						7,
-						8
+						8,
+						9
 					]
 				}
 			],
@@ -55,7 +57,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Alumnos::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Alumnos-Debug-52be8f9fcee381df4697.json",
+					"jsonFile" : "target-Alumnos-Debug-6930baf22e2c808bf489.json",
 					"name" : "Alumnos",
 					"projectIndex" : 0
 				},
@@ -83,7 +85,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "controlCatedra_1::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-controlCatedra_1-Debug-0042d9f716482a272afb.json",
+					"jsonFile" : "target-controlCatedra_1-Debug-7a67be5b7d0f40edfbfa.json",
 					"name" : "controlCatedra_1",
 					"projectIndex" : 0
 				},
@@ -113,6 +115,13 @@
 					"id" : "loteria::@6890427a1f51a3e7e1df",
 					"jsonFile" : "target-loteria-Debug-2bd7757afc48ec7202a0.json",
 					"name" : "loteria",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "spotify::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-spotify-Debug-8cdc1c235edc79eb1b7f.json",
+					"name" : "spotify",
 					"projectIndex" : 0
 				}
 			]

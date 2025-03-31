@@ -10,5 +10,7 @@ add_executable(dumbo Modulo_1/Ejercicios/Dumbo/dumbo.c)
 add_executable(fundaciones Modulo_1/Ejercicios/Fundaciones/fundaciones.c)
 add_executable(inftube Modulo_1/Ejercicios/INFTube/INFtube.c)
 add_executable(loteria Modulo_1/Ejercicios/Loteria/loteriaV2.c)
-add_executable(Alumnos Modulo_1/Ejercicios/Alumnos/Alumnos.c)
+add_executable(Alumnos Modulo_1/Ejercicios/Alumnos/Alumnos.c
+        Modulo_1/Ejercicios/Spotify/spotify.c)
 add_executable(controlCatedra_1 Modulo_1/Evaluaciones/Control_1/controlCatedra_1.c)
+add_executable(spotify Modulo_1/Ejercicios/Spotify/spotify.c)
