@@ -26,7 +26,10 @@ struct Carton {
 };
 
 int comprobarGanador(struct Cliente *cliente, char *numGanador, char *nombre, char *apellido) {
+	if (cliente == NULL || numGanador == NULL || nombre == NULL || apellido == NULL) return 0
+
 	int i;
+
 	for (i = 0; i < cliente->pLibre; i++) {
 		struct Carton *carton;
 		carton = cliente->comprados[i];
@@ -45,9 +48,10 @@ int comprobarGanador(struct Cliente *cliente, char *numGanador, char *nombre, ch
 }
 
 int verificarGanador(struct Loteria *kino, char *numGanador, char *nombre, char *apellido) {
-	if (kino == NULL) return 0;
+	if (kino == NULL || numGanador == NULL || nombre == NULL || apellido == NULL) return 0;
 
 	int i;
+
 	for (i = 0; i < MAX; i++) { // recorriendo la lista de clientes
 		struct Cliente *cliente;
 		cliente = kino->clientes[i];
