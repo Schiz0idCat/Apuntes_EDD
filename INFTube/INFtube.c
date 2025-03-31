@@ -77,7 +77,7 @@ int procesarVideosInfracciones(struct Usuario *usuario) {
 }
 
 int quitarVideosInfraccion(struct INFTube *itube) {
-	if (itube == NULL) return 1;
+	if (itube == NULL || itube->usuarios == NULL) return 1;
 
 	int i;
 
