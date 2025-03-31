@@ -286,12 +286,6 @@ build CMakeFiles/Alumnos.dir/Modulo_1/Ejercicios/Alumnos/Alumnos.c.obj: C_COMPIL
   OBJECT_DIR = CMakeFiles\Alumnos.dir
   OBJECT_FILE_DIR = CMakeFiles\Alumnos.dir\Modulo_1\Ejercicios\Alumnos
 
-build CMakeFiles/Alumnos.dir/Modulo_1/Ejercicios/Spotify/spotify.c.obj: C_COMPILER__Alumnos_unscanned_Debug D$:/Programation/Study/Apuntes-EDD/Modulo_1/Ejercicios/Spotify/spotify.c || cmake_object_order_depends_target_Alumnos
-  DEP_FILE = CMakeFiles\Alumnos.dir\Modulo_1\Ejercicios\Spotify\spotify.c.obj.d
-  FLAGS = -g -std=gnu90 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\Alumnos.dir
-  OBJECT_FILE_DIR = CMakeFiles\Alumnos.dir\Modulo_1\Ejercicios\Spotify
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Alumnos
@@ -300,7 +294,7 @@ build CMakeFiles/Alumnos.dir/Modulo_1/Ejercicios/Spotify/spotify.c.obj: C_COMPIL
 #############################################
 # Link the executable Alumnos.exe
 
-build Alumnos.exe: C_EXECUTABLE_LINKER__Alumnos_Debug CMakeFiles/Alumnos.dir/Modulo_1/Ejercicios/Alumnos/Alumnos.c.obj CMakeFiles/Alumnos.dir/Modulo_1/Ejercicios/Spotify/spotify.c.obj
+build Alumnos.exe: C_EXECUTABLE_LINKER__Alumnos_Debug CMakeFiles/Alumnos.dir/Modulo_1/Ejercicios/Alumnos/Alumnos.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Alumnos.dir
