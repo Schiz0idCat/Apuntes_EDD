@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "Alumnos.exe"
+			"path" : "aviones.exe"
 		},
 		{
-			"path" : "Alumnos.pdb"
+			"path" : "aviones.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -27,7 +27,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 13,
+				"line" : 16,
 				"parent" : 0
 			}
 		]
@@ -56,7 +56,7 @@
 			]
 		}
 	],
-	"id" : "Alumnos::@6890427a1f51a3e7e1df",
+	"id" : "aviones::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -76,8 +76,8 @@
 		],
 		"language" : "C"
 	},
-	"name" : "Alumnos",
-	"nameOnDisk" : "Alumnos.exe",
+	"name" : "aviones",
+	"nameOnDisk" : "aviones.exe",
 	"paths" : 
 	{
 		"build" : ".",
@@ -98,7 +98,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "Modulo_1/Ejercicios/Alumnos/Alumnos.c",
+			"path" : "Modulo_1/Ejercicios/Aviones/aviones.c",
 			"sourceGroupIndex" : 0
 		}
 	],

@@ -280,8 +280,8 @@ build loteria.exe: C_EXECUTABLE_LINKER__loteria_Debug CMakeFiles/loteria.dir/Mod
 
 build cmake_object_order_depends_target_Alumnos: phony || .
 
-build CMakeFiles/Alumnos.dir/Modulo_1/Ejercicios/Alumnos/Alumnos.c.obj: C_COMPILER__Alumnos_unscanned_Debug D$:/Programation/Study/Apuntes-EDD/Modulo_1/Ejercicios/Alumnos/Alumnos.c || cmake_object_order_depends_target_Alumnos
-  DEP_FILE = CMakeFiles\Alumnos.dir\Modulo_1\Ejercicios\Alumnos\Alumnos.c.obj.d
+build CMakeFiles/Alumnos.dir/Modulo_1/Ejercicios/Alumnos/alumnos.c.obj: C_COMPILER__Alumnos_unscanned_Debug D$:/Programation/Study/Apuntes-EDD/Modulo_1/Ejercicios/Alumnos/alumnos.c || cmake_object_order_depends_target_Alumnos
+  DEP_FILE = CMakeFiles\Alumnos.dir\Modulo_1\Ejercicios\Alumnos\alumnos.c.obj.d
   FLAGS = -g -std=gnu90 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\Alumnos.dir
   OBJECT_FILE_DIR = CMakeFiles\Alumnos.dir\Modulo_1\Ejercicios\Alumnos
@@ -294,7 +294,7 @@ build CMakeFiles/Alumnos.dir/Modulo_1/Ejercicios/Alumnos/Alumnos.c.obj: C_COMPIL
 #############################################
 # Link the executable Alumnos.exe
 
-build Alumnos.exe: C_EXECUTABLE_LINKER__Alumnos_Debug CMakeFiles/Alumnos.dir/Modulo_1/Ejercicios/Alumnos/Alumnos.c.obj
+build Alumnos.exe: C_EXECUTABLE_LINKER__Alumnos_Debug CMakeFiles/Alumnos.dir/Modulo_1/Ejercicios/Alumnos/alumnos.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Alumnos.dir
@@ -370,6 +370,39 @@ build spotify.exe: C_EXECUTABLE_LINKER__spotify_Debug CMakeFiles/spotify.dir/Mod
   TARGET_IMPLIB = libspotify.dll.a
   TARGET_PDB = spotify.exe.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target aviones
+
+
+#############################################
+# Order-only phony target for aviones
+
+build cmake_object_order_depends_target_aviones: phony || .
+
+build CMakeFiles/aviones.dir/Modulo_1/Ejercicios/Aviones/aviones.c.obj: C_COMPILER__aviones_unscanned_Debug D$:/Programation/Study/Apuntes-EDD/Modulo_1/Ejercicios/Aviones/aviones.c || cmake_object_order_depends_target_aviones
+  DEP_FILE = CMakeFiles\aviones.dir\Modulo_1\Ejercicios\Aviones\aviones.c.obj.d
+  FLAGS = -g -std=gnu90 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\aviones.dir
+  OBJECT_FILE_DIR = CMakeFiles\aviones.dir\Modulo_1\Ejercicios\Aviones
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target aviones
+
+
+#############################################
+# Link the executable aviones.exe
+
+build aviones.exe: C_EXECUTABLE_LINKER__aviones_Debug CMakeFiles/aviones.dir/Modulo_1/Ejercicios/Aviones/aviones.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\aviones.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = aviones.exe
+  TARGET_IMPLIB = libaviones.dll.a
+  TARGET_PDB = aviones.exe.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -400,6 +433,8 @@ build Alumnos: phony Alumnos.exe
 
 build autosF1: phony autosF1.exe
 
+build aviones: phony aviones.exe
+
 build candidatoGanador: phony candidatoGanador.exe
 
 build candidatoQuitar: phony candidatoQuitar.exe
@@ -424,7 +459,7 @@ build spotify: phony spotify.exe
 #############################################
 # Folder: D:/Programation/Study/Apuntes-EDD/cmake-build-debug
 
-build all: phony autosF1.exe candidatoGanador.exe candidatoQuitar.exe dumbo.exe fundaciones.exe inftube.exe loteria.exe Alumnos.exe controlCatedra_1.exe spotify.exe
+build all: phony autosF1.exe candidatoGanador.exe candidatoQuitar.exe dumbo.exe fundaciones.exe inftube.exe loteria.exe Alumnos.exe controlCatedra_1.exe spotify.exe aviones.exe
 
 # =============================================================================
 # Built-in targets

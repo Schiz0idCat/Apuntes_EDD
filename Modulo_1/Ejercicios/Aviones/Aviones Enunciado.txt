@@ -1,0 +1,15 @@
+Dado un array compacto de punteros a Avion.
+
+struct Avion {
+	int id;
+	char *marca;
+	char *modelo;
+	int capacidad;
+};
+
+Debes implementar la siguiente función:
+
+1.- struct Avion **quitarAvionesBajaCapacidad(struct Avion **aviones, int *pLibre)
+Recibe una referencia a un array compacto de aviones y su última posición libre. Esta función debe retornar un array
+de punteros de tamaño exacto a todas las estructuras Avion cuya capacidad sea menor a la capacidad promedio de todos
+los aviones del array original. Dichas estructuras deben ser quitadas del array original (manteniendo la compactación).

@@ -24,7 +24,8 @@
 						6,
 						7,
 						8,
-						9
+						9,
+						10
 					]
 				}
 			],
@@ -48,7 +49,8 @@
 						6,
 						7,
 						8,
-						9
+						9,
+						10
 					]
 				}
 			],
@@ -57,7 +59,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Alumnos::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Alumnos-Debug-52be8f9fcee381df4697.json",
+					"jsonFile" : "target-Alumnos-Debug-2ccc5e035ff2cf0de458.json",
 					"name" : "Alumnos",
 					"projectIndex" : 0
 				},
@@ -66,6 +68,13 @@
 					"id" : "autosF1::@6890427a1f51a3e7e1df",
 					"jsonFile" : "target-autosF1-Debug-da47d7a3243309afcfe0.json",
 					"name" : "autosF1",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "aviones::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-aviones-Debug-cfaa35adf6358cbba05e.json",
+					"name" : "aviones",
 					"projectIndex" : 0
 				},
 				{
