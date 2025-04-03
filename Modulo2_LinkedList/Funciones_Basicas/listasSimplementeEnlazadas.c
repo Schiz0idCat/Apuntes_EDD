@@ -52,14 +52,29 @@ struct Nodo *buscarNodo(struct Nodo *head, int valor) {
 	return NULL;
 }
 
-void modificarNodo(struct Nodo *head, int valorViejo, int valorNuevo) {
-	if (head == NULL) return;
+void modificarNodo(struct Nodo **head, struct Nodo *nodoViejo, struct Nodo *nodoNuevo) {
+	if (head == NULL || nodoViejo == NULL || nodoNuevo == NULL) return;
 
-	struct Nodo *nodo;
+	struct Nodo *act, *prev;
 
-	nodo = buscarNodo(head, valorViejo);
+	act = *head;
+	prev = NULL;
 
-	if (nodo != NULL) nodo->valor = valorNuevo;
+	while (act != NULL && act != nodoViejo) {
+		prev = act;
+		act = act->sig;
+	}
+
+	if (act == NULL) return; // no se encontró el nodo
+
+	if (prev == NULL) // el head es el nodo buscado
+		*head = nodoNuevo;
+	else
+		prev->sig = nodoNuevo;
+
+	nodoNuevo->sig = act->sig;
+
+	free(act);
 }
 
 void eliminarNodo(struct Nodo **head, int valor) {
@@ -99,6 +114,8 @@ void mostrarNodos(struct Nodo *head) {
 int main() {
 	struct Nodo *numeros;
 
+	numeros = NULL;
+
 	mostrarNodos(numeros);
 
 	enlazarNodo(&numeros, crearNodo(0));
@@ -111,7 +128,7 @@ int main() {
 
 	mostrarNodos(numeros);
 
-	modificarNodo(numeros, 6, 2);
+	modificarNodo(&numeros, buscarNodo(numeros, 6), crearNodo(2));
 
 	mostrarNodos(numeros);
 
