@@ -36,9 +36,8 @@ void enlazarNodo(struct Nodo **head, struct Nodo *nuevo) {
 	rec = *head;
 
 	// Recorremos la lista
-	while (rec->sig != NULL) {
+	while (rec->sig != NULL)
 		rec = rec->sig;
-	}
 
 	rec->sig = nuevo;
 }
