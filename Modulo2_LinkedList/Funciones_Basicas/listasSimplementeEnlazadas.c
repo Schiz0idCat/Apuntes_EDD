@@ -98,7 +98,6 @@ void mostrarNodos(struct Nodo *head) {
 
 int main() {
 	struct Nodo *numeros;
-	struct Nodo *nodoExtraido;
 
 	mostrarNodos(numeros);
 
