@@ -110,7 +110,7 @@ int main() {
 	enlazarNodo(&numeros, crearNodo(4));
 	enlazarNodo(&numeros, crearNodo(7)); // eliminar
 	enlazarNodo(&numeros, crearNodo(5));
-	enlazarNodo(&numeros, crearNodo(6));	// extraer
+	enlazarNodo(&numeros, crearNodo(6)); // extraer
 	enlazarNodo(&numeros, crearNodo(7));
 	enlazarNodo(&numeros, crearNodo(8));
 	enlazarNodo(&numeros, crearNodo(9));
