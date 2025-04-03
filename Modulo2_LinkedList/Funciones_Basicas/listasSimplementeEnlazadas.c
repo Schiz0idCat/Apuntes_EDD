@@ -105,23 +105,19 @@ int main() {
 
 	enlazarNodo(&numeros, crearNodo(0));
 	enlazarNodo(&numeros, crearNodo(1));
-	enlazarNodo(&numeros, crearNodo(2));
-	enlazarNodo(&numeros, crearNodo(8)); // modificar por 3
+	enlazarNodo(&numeros, crearNodo(6)); // modificar por 2
+	enlazarNodo(&numeros, crearNodo(3));
+	enlazarNodo(&numeros, crearNodo(9)); // eliminar
 	enlazarNodo(&numeros, crearNodo(4));
-	enlazarNodo(&numeros, crearNodo(7)); // eliminar
 	enlazarNodo(&numeros, crearNodo(5));
-	enlazarNodo(&numeros, crearNodo(6));
-	enlazarNodo(&numeros, crearNodo(7));
-	enlazarNodo(&numeros, crearNodo(8));
-	enlazarNodo(&numeros, crearNodo(9));
 
 	mostrarNodos(numeros);
 
-	modificarNodo(numeros, 8, 3);
+	modificarNodo(numeros, 6, 2);
 
 	mostrarNodos(numeros);
 
-	eliminarNodo(&numeros, 7);
+	eliminarNodo(&numeros, 9);
 
 	mostrarNodos(numeros);
 
