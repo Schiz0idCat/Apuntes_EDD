@@ -38,3 +38,13 @@ void enlazarNodo(struct Nodo **head, struct Nodo *nuevo) {
 	rec->next = nuevo;
 	nuevo->prev = rec;
 }
+
+struct Nodo *buscarNodo(struct Nodo *head, int valor) {
+	while (head != NULL) {
+		if (head->valor == valor) return head;
+
+		head->next;
+	}
+
+	return NULL;
+}
