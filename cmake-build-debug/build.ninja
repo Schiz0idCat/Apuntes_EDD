@@ -436,6 +436,39 @@ build listasSimplementeEnlazadas.exe: C_EXECUTABLE_LINKER__listasSimplementeEnla
   TARGET_IMPLIB = liblistasSimplementeEnlazadas.dll.a
   TARGET_PDB = listasSimplementeEnlazadas.exe.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target listasDoblementeEnlazadas
+
+
+#############################################
+# Order-only phony target for listasDoblementeEnlazadas
+
+build cmake_object_order_depends_target_listasDoblementeEnlazadas: phony || .
+
+build CMakeFiles/listasDoblementeEnlazadas.dir/Modulo2_LinkedList/Funciones_Basicas/listasDoblementeEnlazadas.c.obj: C_COMPILER__listasDoblementeEnlazadas_unscanned_Debug D$:/Programation/Study/Apuntes-EDD/Modulo2_LinkedList/Funciones_Basicas/listasDoblementeEnlazadas.c || cmake_object_order_depends_target_listasDoblementeEnlazadas
+  DEP_FILE = CMakeFiles\listasDoblementeEnlazadas.dir\Modulo2_LinkedList\Funciones_Basicas\listasDoblementeEnlazadas.c.obj.d
+  FLAGS = -g -std=gnu90 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\listasDoblementeEnlazadas.dir
+  OBJECT_FILE_DIR = CMakeFiles\listasDoblementeEnlazadas.dir\Modulo2_LinkedList\Funciones_Basicas
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target listasDoblementeEnlazadas
+
+
+#############################################
+# Link the executable listasDoblementeEnlazadas.exe
+
+build listasDoblementeEnlazadas.exe: C_EXECUTABLE_LINKER__listasDoblementeEnlazadas_Debug CMakeFiles/listasDoblementeEnlazadas.dir/Modulo2_LinkedList/Funciones_Basicas/listasDoblementeEnlazadas.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\listasDoblementeEnlazadas.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = listasDoblementeEnlazadas.exe
+  TARGET_IMPLIB = liblistasDoblementeEnlazadas.dll.a
+  TARGET_PDB = listasDoblementeEnlazadas.exe.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -480,6 +513,8 @@ build fundaciones: phony fundaciones.exe
 
 build inftube: phony inftube.exe
 
+build listasDoblementeEnlazadas: phony listasDoblementeEnlazadas.exe
+
 build listasSimplementeEnlazadas: phony listasSimplementeEnlazadas.exe
 
 build loteria: phony loteria.exe
@@ -494,7 +529,7 @@ build spotify: phony spotify.exe
 #############################################
 # Folder: D:/Programation/Study/Apuntes-EDD/cmake-build-debug
 
-build all: phony autosF1.exe candidatoGanador.exe candidatoQuitar.exe dumbo.exe fundaciones.exe inftube.exe loteria.exe Alumnos.exe controlCatedra_1.exe spotify.exe aviones.exe listasSimplementeEnlazadas.exe
+build all: phony autosF1.exe candidatoGanador.exe candidatoQuitar.exe dumbo.exe fundaciones.exe inftube.exe loteria.exe Alumnos.exe controlCatedra_1.exe spotify.exe aviones.exe listasSimplementeEnlazadas.exe listasDoblementeEnlazadas.exe
 
 # =============================================================================
 # Built-in targets

@@ -15,3 +15,4 @@ add_executable(controlCatedra_1 Modulo1_Array/Evaluaciones/Control_1/controlCate
 add_executable(spotify Modulo1_Array/Ejercicios/Spotify/spotify.c)
 add_executable(aviones Modulo1_Array/Ejercicios/Aviones/aviones.c)
 add_executable(listasSimplementeEnlazadas Modulo2_LinkedList/Funciones_Basicas/listasSimplementeEnlazadas.c)
+add_executable(listasDoblementeEnlazadas Modulo2_LinkedList/Funciones_Basicas/listasDoblementeEnlazadas.c)
