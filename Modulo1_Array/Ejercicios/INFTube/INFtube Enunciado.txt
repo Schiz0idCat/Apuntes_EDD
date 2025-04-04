@@ -1,0 +1,60 @@
+Estás desarrollando un sistema para una plataforma de videos llamada INFTube. Esta plataforma permite a usuarios subir
+videos y a administradores moderarlos. Cada usuario tiene una cuenta con un tipo de suscripción que determina la
+cantidad máxima de videos que puede subir:
+
+Tipo A: Hasta 1000 videos
+Tipo B: Hasta 500 videos
+Tipo C: Hasta 50 videos
+
+Cada video puede estar en diferentes estados, como "Publicado", "Pendiente", o "Infraccion". Si un video está marcado
+con el estado "Infraccion", debe ser eliminado del sistema y se debe registrar una infracción en el perfil del usuario.
+
+Cuando un usuario acumula más de 3 infracciones, su cuenta debe ser eliminada del sistema.
+
+Estructura del código:
+
+#define MAX_USERS 10000
+#define MAX_ADMINS 20
+
+#define MAX_A 1000
+#define MAX_B 500
+#define MAX_C 50
+
+struct Video {
+	int id;
+	char *nombreVideo;
+	char *fechaPublicacion;
+	char *tipoContenido;
+	int segundos;
+	int minutos;
+	int comentarios;
+	char *estadoVideo;
+};
+
+struct Usuario {
+	int id;
+	char *username;
+	char tipoCuenta;
+	struct Video **videosSubidos;
+	int cantVideosSubidos;
+	int infracciones;
+};
+
+struct Admin {
+	int id;
+	char *username;
+	int nivelAcceso;
+	struct Video **videosModerados;
+	int cantVideosModerados;
+};
+
+struct INFTube {
+	struct Usuario **usuarios;
+	struct Admin **administradores;
+};
+
+Debes programar la siguiente función:
+
+1.- int quitarVideosInfraccion(struct INFTube *itube)
+Debes recorrer la lista de usuarios y procesar la cantidad de videos con infracciones tienen. Si tienen más de 3, el
+video debe ser eliminado. (no existen arrays compactos en este ejercicio)
