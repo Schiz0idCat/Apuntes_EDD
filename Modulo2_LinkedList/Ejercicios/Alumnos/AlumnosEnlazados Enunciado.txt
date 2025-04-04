@@ -1,0 +1,57 @@
+Dada una lista simplemente enlazada de struct Alumno:
+
+struct Evaluacion {
+	int id;
+	char *fecha;
+	int nota;
+};
+
+struct Alumno {
+	char *rut;
+	char *nombre;
+	struct Evaluacion **evaluaciones; // no compacto
+	int tam;
+};
+
+struct NodoAlumno {
+	struct Alumno *dataAlumno;
+	struct NodoAlumno *sig;
+};
+
+struct Curso {
+	int sigla;
+	struct NodoAlumno *head;
+};
+
+Debes implementar las siguientes funciones:
+
+1.- int agregarAlumno(struct NodoAlumno **head, struct Alumno *nuevoAlumno)
+Recibe el head de la lista y un alumno. Debes agregar un nodo que contenga al nuevo alumno en el final de la lista.
+(asegúrate que el alumno no esté repetido).
+
+2.- float promedio(struct Alumno *alumno)
+Recibe un puntero a un alumno. Debes sacar el promedio de sus evaluaciones (es un array no compacto).
+
+3.- struct Alumno *getAlumnoPeorPromedio(struct NodoAlumno **head)
+Recibe el head de la lista. Debes encontrar al alumno con peor promedio, quitarlo de la lista y retornarlo.
+
+
+
+PISTAS (agregarAlumno()):
+1.- hacer una función que busque un alumno dentro de la lista, basándonose en el RUT.
+2.- hacer una función que cree un nodo, recibiendo la estructura Alumno.
+3.- hacer una función que enlace un nodo dentro de la lista.
+
+PISTAS (getAlumnoPeorPromedio())
+1.- Hacer una función que desenlace un nodo dentro de la lista.
+
+
+
+ACLARACIÓN:
+En clases el profesor nos pidió que la función promedio fuera la siguiente:
+
+float calcularPromedio(struct NodoAlumno *head, char *rut);
+
+Sin embargo, al no lograr ver como ocuparla en la función getAlumnoPeorPromedio(), me decidí por hacerla diferente.
+Estoy a la espera de que el profesor muestre como usar la función pedida en clases, por el momento,
+ambas versiones están programadas.
