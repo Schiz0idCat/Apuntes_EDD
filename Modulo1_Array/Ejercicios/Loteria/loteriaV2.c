@@ -44,7 +44,7 @@ int comprobarGanador(struct Cliente *cliente, char *numGanador, char *nombre, ch
 }
 
 int verificarGanador(struct Loteria *kino, char *numGanador, char *nombre, char *apellido) {
-	if (kino == NULL || numGanador == NULL || nombre == NULL || apellido == NULL) return 0;
+	if (kino == NULL || numGanador == NULL || nombre == NULL || apellido == NULL) return 1;
 
 	int i;
 
