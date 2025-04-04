@@ -64,10 +64,10 @@ int procesarVideosInfracciones(struct Usuario *usuario) {
 	for (i = 0; i < maxVideos; i++) { // recorriendo la lista de videos
 		if (usuario->videosSubidos[i] == NULL) continue;
 
-		if (strcmp(usuario->videosSubidos[i]->estadoVideo, "Infraccion") != 0) continue;
-
-		usuario->videosSubidos[i] = NULL;
-		usuario->infracciones++;
+		if (strcmp(usuario->videosSubidos[i]->estadoVideo, "Infraccion") == 0) {
+			usuario->videosSubidos[i] = NULL;
+			usuario->infracciones++;
+		}
 	}
 
 	return 0;
@@ -83,9 +83,8 @@ int quitarVideosInfraccion(struct INFTube *itube) {
 
 		procesarVideosInfracciones(itube->usuarios[i]); // analizar si el usuario tiene videos con infracciones
 
-		if (itube->usuarios[i]->infracciones <= 3) continue;
-
-		itube->usuarios[i] = NULL;
+		if (itube->usuarios[i]->infracciones > 3)
+			itube->usuarios[i] = NULL;
 	}
 
 	return 0;
