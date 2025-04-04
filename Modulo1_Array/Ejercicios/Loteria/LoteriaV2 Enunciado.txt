@@ -1,0 +1,53 @@
+Estás colaborando con una empresa de loterías internacionales para implementar un sistema de gestión de clientes y
+boletos de lotería.
+
+Cada cliente puede comprar múltiples cartones (boletos) para sorteos, y la empresa desea automatizar la verificación de
+ganadores.
+
+Estructuras
+El sistema maneja tres estructuras principales:
+
+Cartón (struct Carton): representa un boleto de sorteo, incluyendo:
+
+El tipo de sorteo.
+Número del sorteo.
+Fecha del sorteo.
+
+Cliente (struct Cliente): contiene información personal y un arreglo de cartones comprados.
+
+Lotería (struct Loteria): representa el sistema de gestión general, que almacena todos los clientes registrados y el
+país de operación.
+
+#define MAX 46352
+
+struct Loteria {
+	struct Cliente **clientes;
+	char *pais;
+};
+
+struct Cliente {
+	char *nombre;
+	char *apellido;
+	int edad;
+	struct Carton **comprados;
+	int pLibre;
+};
+
+struct Carton {
+	char tipoSorteo;
+	char *numSorteo;
+	int dia;
+	int mes;
+	int anio;
+};
+
+Debes implementar la siguiente función:
+
+1.- comprobarGanador(struct Cliente *cliente, char *numGanador, char *nombre, char *apellido);
+Verifica si un cliente específico ganó un sorteo tipo 'A' con el número proporcionado, y si su nombre y apellido
+coinciden.
+
+2.- verificarGanador(struct Loteria *kino, char *numGanador, char *nombre, char *apellido);
+Recorre toda la base de clientes del sistema. Llama a comprobarGanador() para determinar si alguien ganó el sorteo con
+los datos indicados.
+
