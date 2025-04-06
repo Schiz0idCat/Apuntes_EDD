@@ -94,7 +94,7 @@ struct Nodo *eliminarNodo(struct Nodo **head, int valor) {
 	return act;
 }
 
-void mostrarNodos(struct Nodo *head) {
+void mostrarLista(struct Nodo *head) {
 	if (head == NULL)
 		printf("NULL\n");
 
@@ -113,7 +113,7 @@ int main() {
 
 	numeros = NULL;
 
-	mostrarNodos(numeros);
+	mostrarLista(numeros);
 
 	enlazarNodo(&numeros, crearNodo(0)); // eliminar
 	enlazarNodo(&numeros, crearNodo(1)); // modificar por 0
@@ -127,31 +127,31 @@ int main() {
 	enlazarNodo(&numeros, crearNodo(8)); // modificar por 9
 	enlazarNodo(&numeros, crearNodo(9)); // eliminar
 
-	mostrarNodos(numeros);
+	mostrarLista(numeros);
 
 	eliminarNodo(&numeros, 0);
 
-	mostrarNodos(numeros);
+	mostrarLista(numeros);
 
 	modificarNodo(numeros, 1, 0);
 
-	mostrarNodos(numeros);
+	mostrarLista(numeros);
 
 	eliminarNodo(&numeros, 11);
 
-	mostrarNodos(numeros);
+	mostrarLista(numeros);
 
 	modificarNodo(numeros, 10, 5);
 
-	mostrarNodos(numeros);
+	mostrarLista(numeros);
 
 	eliminarNodo(&numeros, 9);
 
-	mostrarNodos(numeros);
+	mostrarLista(numeros);
 
 	modificarNodo(numeros, 8, 9);
 
-	mostrarNodos(numeros);
+	mostrarLista(numeros);
 
 	return 0;
 }
