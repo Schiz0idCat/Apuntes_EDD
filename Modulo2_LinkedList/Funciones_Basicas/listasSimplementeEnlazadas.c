@@ -52,29 +52,16 @@ struct Nodo *buscarNodo(struct Nodo *head, int valor) {
 	return NULL;
 }
 
-void modificarNodo(struct Nodo **head, struct Nodo *nodoViejo, struct Nodo *nodoNuevo) {
-	if (head == NULL || nodoViejo == NULL || nodoNuevo == NULL) return;
+void modificarNodo(struct Nodo *head, int valorViejo, int valorNuevo) {
+	if (head == NULL) return;
 
-	struct Nodo *act, *prev;
+	struct Nodo *nodoBuscado;
 
-	act = *head;
-	prev = NULL;
+	nodoBuscado = buscarNodo(head, valorViejo);
 
-	while (act != NULL && act != nodoViejo) {
-		prev = act;
-		act = act->sig;
-	}
+	if (nodoBuscado == NULL) return;
 
-	if (act == NULL) return; // no se encontró el nodo
-
-	if (prev == NULL) // el head es el nodo buscado
-		*head = nodoNuevo;
-	else
-		prev->sig = nodoNuevo;
-
-	nodoNuevo->sig = act->sig;
-
-	free(act);
+	nodoBuscado->valor = valorNuevo;
 }
 
 void eliminarNodo(struct Nodo **head, int valor) {
@@ -118,21 +105,41 @@ int main() {
 
 	mostrarNodos(numeros);
 
-	enlazarNodo(&numeros, crearNodo(0));
-	enlazarNodo(&numeros, crearNodo(1));
-	enlazarNodo(&numeros, crearNodo(6)); // modificar por 2
+	enlazarNodo(&numeros, crearNodo(0)); // eliminar
+	enlazarNodo(&numeros, crearNodo(1)); // modificar por 0
+	enlazarNodo(&numeros, crearNodo(2));
 	enlazarNodo(&numeros, crearNodo(3));
-	enlazarNodo(&numeros, crearNodo(9)); // eliminar
+	enlazarNodo(&numeros, crearNodo(11)); // eliminar
 	enlazarNodo(&numeros, crearNodo(4));
-	enlazarNodo(&numeros, crearNodo(5));
+	enlazarNodo(&numeros, crearNodo(10)); // modificar por 5
+	enlazarNodo(&numeros, crearNodo(6));
+	enlazarNodo(&numeros, crearNodo(7));
+	enlazarNodo(&numeros, crearNodo(8)); // modificar por 9
+	enlazarNodo(&numeros, crearNodo(9)); // eliminar
 
 	mostrarNodos(numeros);
 
-	modificarNodo(&numeros, buscarNodo(numeros, 6), crearNodo(2));
+	eliminarNodo(&numeros, 0);
+
+	mostrarNodos(numeros);
+
+	modificarNodo(numeros, 1, 0);
+
+	mostrarNodos(numeros);
+
+	eliminarNodo(&numeros, 11);
+
+	mostrarNodos(numeros);
+
+	modificarNodo(numeros, 10, 5);
 
 	mostrarNodos(numeros);
 
 	eliminarNodo(&numeros, 9);
+
+	mostrarNodos(numeros);
+
+	modificarNodo(numeros, 8, 9);
 
 	mostrarNodos(numeros);
 
