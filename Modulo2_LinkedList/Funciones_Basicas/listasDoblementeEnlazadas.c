@@ -51,6 +51,20 @@ struct Nodo *buscarNodo(struct Nodo *head, int valor) {
 	return NULL;
 }
 
+int modificarNodo(struct Nodo *head, int valorViejo, int valorNuevo) {
+	if (head == NULL) return 1;
+
+	struct Nodo *nodoBuscado;
+
+	nodoBuscado = buscarNodo(head, valorViejo);
+
+	if (nodoBuscado == NULL) return 1;
+
+	nodoBuscado->valor = valorNuevo;
+
+	return 0;
+}
+
 struct Nodo *eliminarNodo(struct Nodo **head, int valor) {
 	if (head == NULL || *head == NULL) return NULL;
 
