@@ -95,11 +95,17 @@ struct Nodo *eliminarNodo(struct Nodo **head, int valor) {
 }
 
 void mostrarNodos(struct Nodo *head) {
+	if (head == NULL)
+		printf("NULL\n");
+
 	while (head != NULL) {
 		printf("%d -> ", head->valor);
-		head = head->sig; // como el parámetro no es un doble puntero, se puede recorrer con el head sin problemas
+
+		if (head->sig == NULL)
+			printf("NULL\n");
+
+		head = head->sig;
 	}
-	printf("NULL\n");
 }
 
 int main() {
