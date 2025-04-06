@@ -48,3 +48,23 @@ struct Nodo *buscarNodo(struct Nodo *head, int valor) {
 
 	return NULL;
 }
+
+struct Nodo *eliminarNodo(struct Nodo **head, int valor) {
+	if (head == NULL || *head == NULL) return NULL;
+
+	struct Nodo *nodoEliminar;
+
+	nodoEliminar = buscarNodo(*head, valor);
+
+	if (nodoEliminar == NULL) return NULL; // valor no encontrado
+
+	if (nodoEliminar->prev == NULL) // si es el primero
+		*head = nodoEliminar->next;
+	else
+		nodoEliminar->prev->next = nodoEliminar->next;
+
+	if (nodoEliminar->next != NULL) // si nodoEliminar no es el último
+		nodoEliminar->next->prev = nodoEliminar->prev;
+
+	return nodoEliminar;
+}
