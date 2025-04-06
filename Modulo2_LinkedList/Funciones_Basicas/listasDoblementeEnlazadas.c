@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 
 struct Nodo {
@@ -86,4 +87,71 @@ struct Nodo *eliminarNodo(struct Nodo **head, int valor) {
 		nodoEliminar->next->prev = nodoEliminar->prev;
 
 	return nodoEliminar;
+}
+
+void mostrarNodosHaciaDelante(struct Nodo *head) {
+	if (head == NULL) {
+		printf("NULL\n");
+
+		return;
+	}
+
+	printf("NULL <- ");
+
+	while (head != NULL) {
+		if (head->next != NULL)
+			printf("%d <-> ", head->valor);
+		else
+			printf("%d -> NULL\n", head->valor);
+
+		head = head->next;
+	}
+}
+
+int main() {
+	struct Nodo *numeros;
+
+	numeros = NULL;
+
+	mostrarNodosHaciaDelante(numeros);
+
+	enlazarNodo(&numeros, crearNodo(0)); // eliminar
+	enlazarNodo(&numeros, crearNodo(1)); // modificar por 0
+	enlazarNodo(&numeros, crearNodo(2));
+	enlazarNodo(&numeros, crearNodo(3));
+	enlazarNodo(&numeros, crearNodo(11)); // eliminar
+	enlazarNodo(&numeros, crearNodo(4));
+	enlazarNodo(&numeros, crearNodo(10)); // modificar por 5
+	enlazarNodo(&numeros, crearNodo(6));
+	enlazarNodo(&numeros, crearNodo(7));
+	enlazarNodo(&numeros, crearNodo(8)); // modificar por 9
+	enlazarNodo(&numeros, crearNodo(9)); // eliminar
+
+	mostrarNodosHaciaDelante(numeros);
+
+	eliminarNodo(&numeros, 0);
+
+	mostrarNodosHaciaDelante(numeros);
+
+	modificarNodo(numeros, 1, 0);
+
+	mostrarNodosHaciaDelante(numeros);
+
+	eliminarNodo(&numeros, 11);
+
+	mostrarNodosHaciaDelante(numeros);
+
+	modificarNodo(numeros, 10, 5);
+
+	mostrarNodosHaciaDelante(numeros);
+
+	eliminarNodo(&numeros, 9);
+
+	mostrarNodosHaciaDelante(numeros);
+
+	modificarNodo(numeros, 8, 9);
+
+	mostrarNodosHaciaDelante(numeros);
+
+	return 0;
 }
