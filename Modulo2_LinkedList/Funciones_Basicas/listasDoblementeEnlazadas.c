@@ -58,8 +58,11 @@ struct Nodo *eliminarNodo(struct Nodo **head, int valor) {
 
 	if (nodoEliminar == NULL) return NULL; // valor no encontrado
 
-	if (nodoEliminar->prev == NULL) // si es el primero
+	if (nodoEliminar->prev == NULL) { // si es el primero
 		*head = nodoEliminar->next;
+
+		if (*head != NULL) (*head)->prev = NULL;
+	}
 	else
 		nodoEliminar->prev->next = nodoEliminar->next;
 
