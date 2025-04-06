@@ -61,3 +61,7 @@
 110	219	7656548783209540	listasSimplementeEnlazadas.exe	20e57c8690a0fe49
 16	112	7656549922013924	CMakeFiles/listasSimplementeEnlazadas.dir/Modulo2_LinkedList/Funciones_Basicas/listasSimplementeEnlazadas.c.obj	3960f47eef58d74c
 112	221	7656549922977254	listasSimplementeEnlazadas.exe	20e57c8690a0fe49
+14	114	7656553284825808	CMakeFiles/listasDoblementeEnlazadas.dir/Modulo2_LinkedList/Funciones_Basicas/listasDoblementeEnlazadas.c.obj	10de4bb26b87c701
+115	235	7656553285836679	listasDoblementeEnlazadas.exe	5e7d254afe4e5c15
+14	113	7656553713534083	CMakeFiles/listasDoblementeEnlazadas.dir/Modulo2_LinkedList/Funciones_Basicas/listasDoblementeEnlazadas.c.obj	10de4bb26b87c701
+114	223	7656553714517478	listasDoblementeEnlazadas.exe	5e7d254afe4e5c15

@@ -108,6 +108,32 @@ void mostrarLista(struct Nodo *head) {
 	}
 }
 
+void mostrarListaReversa(struct Nodo *head) {
+	if (head == NULL) {
+		printf("NULL\n");
+
+		return;
+	}
+
+	struct Nodo *last;
+
+	last = head;
+
+	while (last->next != NULL)
+		last = last->next;
+
+	printf("NULL <- ");
+
+	while (last != NULL) {
+		if (last->prev != NULL)
+			printf("%d <-> ", last->valor);
+		else
+			printf("%d -> NULL\n", last->valor);
+
+		last = last->prev;
+	}
+}
+
 int main() {
 	struct Nodo *numeros;
 
@@ -152,6 +178,8 @@ int main() {
 	modificarNodo(numeros, 8, 9);
 
 	mostrarLista(numeros);
+
+	mostrarListaReversa(numeros);
 
 	return 0;
 }
