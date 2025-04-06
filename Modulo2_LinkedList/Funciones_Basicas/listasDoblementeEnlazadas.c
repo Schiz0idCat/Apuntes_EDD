@@ -19,13 +19,13 @@ struct Nodo *crearNodo(int valor) {
 	return nuevo;
 }
 
-void enlazarNodo(struct Nodo **head, struct Nodo *nuevo) {
-	if (head == NULL || nuevo == NULL) return;
+int enlazarNodo(struct Nodo **head, struct Nodo *nuevo) {
+	if (head == NULL || nuevo == NULL) return 1;
 
 	if (*head == NULL) {
 		*head = nuevo;
 
-		return;
+		return 0;
 	}
 
 	struct Nodo *rec;
@@ -37,6 +37,8 @@ void enlazarNodo(struct Nodo **head, struct Nodo *nuevo) {
 
 	rec->next = nuevo;
 	nuevo->prev = rec;
+
+	return 0;
 }
 
 struct Nodo *buscarNodo(struct Nodo *head, int valor) {
