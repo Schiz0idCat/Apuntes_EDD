@@ -33,16 +33,18 @@ int contarVotos(struct Candidato **candidatos, int max, char *rut) {
 struct Candidato *determinarAlcaldeGanador(struct Candidato **alcaldes, int pLibreAlcaldes, char *comuna) {
 	if (alcaldes == NULL || comuna == NULL) return NULL;
 
-	int i;
+	int i, votosGanador;
 	struct Candidato *ganador;
 
+	votosGanador = 0;
 	ganador = NULL;
 
 	for (i = 0; i < pLibreAlcaldes; i++) {
-		if (alcaldes[i] == NULL || alcaldes[i]->comunaPostulante == NULL) return NULL;
+		if (alcaldes[i] == NULL || alcaldes[i]->comunaPostulante == NULL) continue;
 
 		if (strcmp(alcaldes[i]->comunaPostulante, comuna) == 0) {
-			if (ganador == NULL || contarVotos(alcaldes, pLibreAlcaldes, alcaldes[i]->rut) > contarVotos(alcaldes, pLibreAlcaldes, ganador->rut)) {
+			if (ganador == NULL || contarVotos(alcaldes, pLibreAlcaldes, alcaldes[i]->rut) > votosGanador) {
+				votosGanador = contarVotos(alcaldes, pLibreAlcaldes, alcaldes[i]->rut);
 				ganador = alcaldes[i];
 			}
 		}
