@@ -1,0 +1,30 @@
+La aplicacion TokTok desea analizar los hábitos de publicación de sus usuarios, específicamente identificando a aquellos
+que suben videos de larga duración y/o sube videos con mayor duración. Para ello se ha diseñado un sistema con las
+siguientes estructuras:
+
+struct Video {
+	int duracion; // en segundos
+	char *fecha; // DD-MM-AA
+};
+
+struct Usuario {
+	char *nombreUsuario;
+	struct Video **videos;
+	int totalVideos;
+};
+
+struct TokTok {
+	struct Usuario **usuarios;
+	int totalUsuarios;
+};
+
+Se solicita implementar las siguientes funciones:
+
+1.- int contarUsuariosConVideosLargos(struct TokTok *plataforma);
+Recibe un puntero a una estructura TokTok. Debe devolver la cantidad de usuarios que han subido a lo menos un video
+con una duración mayor a una hora.
+
+2.- struct Usuario *usuarioVideoMasLargo(struct TokTok *plataforma);
+Recibe un puntero a una estructura TokTok. Debe devolver un puntero a la estructura Usuario que haya subido el video
+más largo de la plataforma (debe devolver el primero que encuentre). Si ningún usuario cumple con la condición, se
+retorna NULL.
