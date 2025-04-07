@@ -305,37 +305,37 @@ build Alumnos.exe: C_EXECUTABLE_LINKER__Alumnos_Debug CMakeFiles/Alumnos.dir/Mod
   TARGET_PDB = Alumnos.exe.dbg
 
 # =============================================================================
-# Object build statements for EXECUTABLE target controlCatedra_1
+# Object build statements for EXECUTABLE target controlArrays1
 
 
 #############################################
-# Order-only phony target for controlCatedra_1
+# Order-only phony target for controlArrays1
 
-build cmake_object_order_depends_target_controlCatedra_1: phony || .
+build cmake_object_order_depends_target_controlArrays1: phony || .
 
-build CMakeFiles/controlCatedra_1.dir/Modulo1_Array/Evaluaciones/Control_1/controlCatedra_1.c.obj: C_COMPILER__controlCatedra_1_unscanned_Debug D$:/Programation/Study/Apuntes-EDD/Modulo1_Array/Evaluaciones/Control_1/controlCatedra_1.c || cmake_object_order_depends_target_controlCatedra_1
-  DEP_FILE = CMakeFiles\controlCatedra_1.dir\Modulo1_Array\Evaluaciones\Control_1\controlCatedra_1.c.obj.d
+build CMakeFiles/controlArrays1.dir/Modulo1_Array/Evaluaciones/Control_1/controlArray1.c.obj: C_COMPILER__controlArrays1_unscanned_Debug D$:/Programation/Study/Apuntes-EDD/Modulo1_Array/Evaluaciones/Control_1/controlArray1.c || cmake_object_order_depends_target_controlArrays1
+  DEP_FILE = CMakeFiles\controlArrays1.dir\Modulo1_Array\Evaluaciones\Control_1\controlArray1.c.obj.d
   FLAGS = -g -std=gnu90 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\controlCatedra_1.dir
-  OBJECT_FILE_DIR = CMakeFiles\controlCatedra_1.dir\Modulo1_Array\Evaluaciones\Control_1
+  OBJECT_DIR = CMakeFiles\controlArrays1.dir
+  OBJECT_FILE_DIR = CMakeFiles\controlArrays1.dir\Modulo1_Array\Evaluaciones\Control_1
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target controlCatedra_1
+# Link build statements for EXECUTABLE target controlArrays1
 
 
 #############################################
-# Link the executable controlCatedra_1.exe
+# Link the executable controlArrays1.exe
 
-build controlCatedra_1.exe: C_EXECUTABLE_LINKER__controlCatedra_1_Debug CMakeFiles/controlCatedra_1.dir/Modulo1_Array/Evaluaciones/Control_1/controlCatedra_1.c.obj
+build controlArrays1.exe: C_EXECUTABLE_LINKER__controlArrays1_Debug CMakeFiles/controlArrays1.dir/Modulo1_Array/Evaluaciones/Control_1/controlArray1.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\controlCatedra_1.dir
+  OBJECT_DIR = CMakeFiles\controlArrays1.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_FILE = controlCatedra_1.exe
-  TARGET_IMPLIB = libcontrolCatedra_1.dll.a
-  TARGET_PDB = controlCatedra_1.exe.dbg
+  TARGET_FILE = controlArrays1.exe
+  TARGET_IMPLIB = libcontrolArrays1.dll.a
+  TARGET_PDB = controlArrays1.exe.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target spotify
@@ -502,6 +502,39 @@ build alumnosEnlazados.exe: C_EXECUTABLE_LINKER__alumnosEnlazados_Debug CMakeFil
   TARGET_IMPLIB = libalumnosEnlazados.dll.a
   TARGET_PDB = alumnosEnlazados.exe.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target controlArrays2
+
+
+#############################################
+# Order-only phony target for controlArrays2
+
+build cmake_object_order_depends_target_controlArrays2: phony || .
+
+build CMakeFiles/controlArrays2.dir/Modulo1_Array/Evaluaciones/Control_2/controlArrays2.c.obj: C_COMPILER__controlArrays2_unscanned_Debug D$:/Programation/Study/Apuntes-EDD/Modulo1_Array/Evaluaciones/Control_2/controlArrays2.c || cmake_object_order_depends_target_controlArrays2
+  DEP_FILE = CMakeFiles\controlArrays2.dir\Modulo1_Array\Evaluaciones\Control_2\controlArrays2.c.obj.d
+  FLAGS = -g -std=gnu90 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\controlArrays2.dir
+  OBJECT_FILE_DIR = CMakeFiles\controlArrays2.dir\Modulo1_Array\Evaluaciones\Control_2
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target controlArrays2
+
+
+#############################################
+# Link the executable controlArrays2.exe
+
+build controlArrays2.exe: C_EXECUTABLE_LINKER__controlArrays2_Debug CMakeFiles/controlArrays2.dir/Modulo1_Array/Evaluaciones/Control_2/controlArrays2.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\controlArrays2.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = controlArrays2.exe
+  TARGET_IMPLIB = libcontrolArrays2.dll.a
+  TARGET_PDB = controlArrays2.exe.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -540,7 +573,9 @@ build candidatoGanador: phony candidatoGanador.exe
 
 build candidatoQuitar: phony candidatoQuitar.exe
 
-build controlCatedra_1: phony controlCatedra_1.exe
+build controlArrays1: phony controlArrays1.exe
+
+build controlArrays2: phony controlArrays2.exe
 
 build dumbo: phony dumbo.exe
 
@@ -564,7 +599,7 @@ build spotify: phony spotify.exe
 #############################################
 # Folder: D:/Programation/Study/Apuntes-EDD/cmake-build-debug
 
-build all: phony autosF1.exe candidatoGanador.exe candidatoQuitar.exe dumbo.exe fundaciones.exe inftube.exe loteria.exe Alumnos.exe controlCatedra_1.exe spotify.exe aviones.exe listasSimplementeEnlazadas.exe listasDoblementeEnlazadas.exe alumnosEnlazados.exe
+build all: phony autosF1.exe candidatoGanador.exe candidatoQuitar.exe dumbo.exe fundaciones.exe inftube.exe loteria.exe Alumnos.exe controlArrays1.exe spotify.exe aviones.exe listasSimplementeEnlazadas.exe listasDoblementeEnlazadas.exe alumnosEnlazados.exe controlArrays2.exe
 
 # =============================================================================
 # Built-in targets
