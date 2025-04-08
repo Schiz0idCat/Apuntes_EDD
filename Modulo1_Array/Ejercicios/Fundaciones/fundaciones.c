@@ -19,7 +19,7 @@ struct Fundacion {
 };
 
 int totalTraspasos(struct Fundacion *fundacion) {
-	if (fundacion == NULL || fundacion->traspasos == NULL) return NULL;
+	if (fundacion == NULL || fundacion->traspasos == NULL) return 0;
 
 	int i, totalMontos;
 
