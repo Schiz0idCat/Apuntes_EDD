@@ -77,7 +77,6 @@ struct Alumno *buscarAlumno(struct NodoAlumno *head, char *rut) {
 int agregarAlumno(struct NodoAlumno **head, struct Alumno *nuevoAlumno) {
 	if (head == NULL || nuevoAlumno == NULL) return 1;
 
-	struct NodoAlumno *nuevoNodo, *rec;
 	struct Alumno *alumnoAux;
 
 	alumnoAux = buscarAlumno(*head, nuevoAlumno->rut);
@@ -182,7 +181,7 @@ struct Alumno *getAlumnoPeorPromedio(struct NodoAlumno **head) {
 		rec = rec->sig;
 	}
 
-	quitarAlumno(head, alumnoPeorPromedio->rut);
+	// quitarAlumno(head, alumnoPeorPromedio->rut); // no recuedo si pedía quitar al alumno
 
 	return alumnoPeorPromedio;
 }
@@ -196,7 +195,7 @@ void mostrarNotas(struct Evaluacion **evaluaciones, int tam) {
 
 	int i;
 
-	printf("  Notas: ");
+	printf("    Notas: ");
 	for (i = 0; i < tam; i++) {
 		if (evaluaciones[i] == NULL) continue;
 
@@ -210,7 +209,7 @@ void mostrarAlumno(struct Alumno *alumno) {
 
 	printf("RUT: %s, Nombre: %s, Evaluaciones: %d\n", alumno->rut, alumno->nombre, alumno->tam);
 	mostrarNotas(alumno->evaluaciones, alumno->tam);
-	printf("Promedio: %.2f\n\n", promedio(alumno));
+	printf("    Promedio: %.2f\n\n", promedio(alumno));
 }
 
 void mostrarListaAlumnos(struct NodoAlumno *head) {
@@ -238,7 +237,7 @@ char *inputStr(char *msj) {
 
 	scanf(" %[^\n]", buffer);
 
-	size = strlen(buffer);
+	size = (int)strlen(buffer);
 
 	str = (char *)malloc(size * sizeof(char));
 
@@ -306,7 +305,7 @@ int main() {
 	alumno = NULL;
 
 	do {
-		printf("\nMenu:\n");
+		printf("Menu:\n");
 		printf("1. Agregar alumno\n");
 		printf("2. Mostrar alumnos\n");
 		printf("3. Mostrar peor promedio\n");
@@ -317,8 +316,10 @@ int main() {
 		switch (opcion) {
 			case 1:
 				alumno = crearAlumno();
-				if (alumno != NULL)
+				if (alumno != NULL) {
 					agregarAlumno(&lista, alumno);
+					printf("\n");
+				}
 				else
 					printf("Error al crear alumno.\n");
 				break;
@@ -328,8 +329,8 @@ int main() {
 			case 3:
 				alumno = getAlumnoPeorPromedio(&lista);
 				if (alumno != NULL) {
-					printf("\nEl alumno con peor promedio es:\n");
-					printf("RUT: %s, Nombre: %s, Promedio: %.2f\n", alumno->rut, alumno->nombre, promedio(alumno));
+					printf("El alumno con peor promedio es:\n");
+					mostrarAlumno(alumno);
 				}
 				else
 					printf("\nNo hay alumnos en la lista.\n");
