@@ -205,7 +205,15 @@ void mostrarNotas(struct Evaluacion **evaluaciones, int tam) {
 	printf("\n");
 }
 
-void mostrarAlumnos(struct NodoAlumno *head) {
+void mostrarAlumno(struct Alumno *alumno) {
+	if (alumno == NULL) return;
+
+	printf("RUT: %s, Nombre: %s, Evaluaciones: %d\n", alumno->rut, alumno->nombre, alumno->tam);
+	mostrarNotas(alumno->evaluaciones, alumno->tam);
+	printf("Promedio: %.2f\n\n", promedio(alumno));
+}
+
+void mostrarListaAlumnos(struct NodoAlumno *head) {
 	if (head == NULL) {
 		printf("NULL\n");
 		return;
@@ -213,13 +221,7 @@ void mostrarAlumnos(struct NodoAlumno *head) {
 
 	printf("Lista de Alumnos:\n");
 	while (head != NULL) {
-		printf("RUT: %s, Nombre: %s, Evaluaciones: %d\n",
-			   head->dataAlumno->rut,
-			   head->dataAlumno->nombre,
-			   head->dataAlumno->tam);
-
-		mostrarNotas(head->dataAlumno->evaluaciones, head->dataAlumno->tam);
-		printf("  Promedio %.2f\n", promedio(head->dataAlumno));
+		mostrarAlumno(head->dataAlumno);
 
 		head = head->sig;
 	}
@@ -307,7 +309,7 @@ int main() {
 		printf("\nMenu:\n");
 		printf("1. Agregar alumno\n");
 		printf("2. Mostrar alumnos\n");
-		printf("3. Mostrar\n");
+		printf("3. Mostrar peor promedio\n");
 		printf("4. Salir\n");
 		printf("Seleccione una opcion: ");
 		scanf("%d", &opcion);
@@ -321,7 +323,7 @@ int main() {
 					printf("Error al crear alumno.\n");
 				break;
 			case 2:
-				mostrarAlumnos(lista);
+				mostrarListaAlumnos(lista);
 				break;
 			case 3:
 				alumno = getAlumnoPeorPromedio(&lista);
