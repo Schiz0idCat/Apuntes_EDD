@@ -57,10 +57,6 @@ struct Lord *getMayorLordEnCasa(struct NodoLord *head, int cantidadMilitares) {
 	return lordMayor;
 }
 
-void EliminarReyActual(struct TronoDeHierro *corona) {
-
-}
-
 struct Lord *elegirNuevoRey(struct TronoDeHierro *corona) {
 	if (corona == NULL) return NULL;
 
@@ -117,4 +113,20 @@ struct Lord *elegirNuevoRey(struct TronoDeHierro *corona) {
 	}
 
 	return nuevoRey;
+}
+
+int desenlazarLord(struct NodoCasa **head, struct Lord *lord) {
+
+}
+
+void EliminarReyActual(struct TronoDeHierro *corona) {
+	if (corona == NULL) return;
+
+	struct Lord *nuevoRey;
+
+	nuevoRey = elegirNuevoRey(corona);
+
+	desenlazarLord(&corona->casas, nuevoRey);
+
+	corona->rey = nuevoRey;
 }
