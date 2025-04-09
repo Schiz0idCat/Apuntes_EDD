@@ -1,0 +1,60 @@
+El trono de hierro es muy codiciado por los más importantes representantes de las distintas casas que conforman el reino.
+Es por ello, que se solicita automatizar ciertos procesos con la finalidad de controlar las aspiraciones al reinado,
+considerando:
+
+Estructura TronoDeHierro: contiene un puntero de tipo Lord a quien ocupa la corona actualmente, y el monto total en
+dinero que se debe al Banco de Hierro. También se tiene un puntero a una lista simplemente enlazada de Casas que
+conforman el reino.
+
+Estructura Casa: Representa una casa dentro del reino, tiene un nombre, una cantidad de militares asociados y los kilos
+de oro que almacena. También cuenta con un puntero a una lista doblemente enlazada que corresponde a los distintos Lords
+que componen la corte de la casa.
+
+Estructura Lord: Un Lord es un aspirante a trono, y tiene un nombre, un apellido, cantidad de batallas ganadas y la
+cantidad de oro que ha invertido en el Banco de Hierro.
+
+struct Lord {
+	char *nombre;
+	char *apellido;
+	int batallasGanadas;
+	float oroInvertido;
+};
+
+struct NodoLord {
+	struct Lord *datosLord;
+	struct NodoLord *sig, *ant;
+};
+
+struct Casa {
+	char *nombre;
+	int cantidadMilitares;
+	int oroAlmacenado;
+	struct NodoLord *headLords;
+};
+
+struct NodoCasa {
+	struct Casa *datosCasa;
+	struct NodoCasa *sig;
+};
+
+struct TronoDeHierro {
+	struct Lord *rey;
+	int deuda;
+	struct NodoCasa *casas;
+};
+
+Desarrolle las siguientes funciones:
+
+1.- void EliminarReyActual(struct TronoDeHierro *corona)
+En la capital ha ocurrido una gran batalla, y la reina actual ha sido asesinada por una joven guerrera sin rostro, y al
+no existir descendencia deberá ser elegido un nuevo rey para el trono. Pero primero, esta función recibe por parámetro
+un puntero al Trono de Hierro, y debe eliminar al ray actual. Para ello, no solo bastará hacer NULL la referencia del
+rey, sino que también deberá eliminarse el monarca (Lord) de la casa en que se encuentre.
+
+2.- struct Lord *elegirNuevoRey(struct TronoDeHierro *corona)
+Esta función recibe por parámetro un puntero al Trono de Hierro y deberá determinar quién es el nuevo rey. Para ello,
+deberá buscar la mejor combinación de batallas ganadas, oro invertido en el Banco de Hierro y la cantidad de militares
+de la casa. Para ello, deberá calcular un indicador en donde la ponderación será: Batallas ganadas (20%), Oro invertido
+(50%) y cantidad de militares (30%). El que dada esta ponderación obtenga el mejor indicador (resultado de la operación)
+será el nuevo monarca. En caso de existir empates se decidirá por el oro almacenado de la casa, donde nunca será el
+mismo para todas. Debe retornar un puntero al Lord que ha sido elegido nuevo rey.

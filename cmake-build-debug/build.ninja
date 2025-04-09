@@ -535,6 +535,39 @@ build controlArrays2.exe: C_EXECUTABLE_LINKER__controlArrays2_Debug CMakeFiles/c
   TARGET_IMPLIB = libcontrolArrays2.dll.a
   TARGET_PDB = controlArrays2.exe.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target medievo
+
+
+#############################################
+# Order-only phony target for medievo
+
+build cmake_object_order_depends_target_medievo: phony || .
+
+build CMakeFiles/medievo.dir/Modulo2_LinkedList/Ejercicios/Medievo/medievo.c.obj: C_COMPILER__medievo_unscanned_Debug D$:/Programation/Study/Apuntes-EDD/Modulo2_LinkedList/Ejercicios/Medievo/medievo.c || cmake_object_order_depends_target_medievo
+  DEP_FILE = CMakeFiles\medievo.dir\Modulo2_LinkedList\Ejercicios\Medievo\medievo.c.obj.d
+  FLAGS = -g -std=gnu90 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\medievo.dir
+  OBJECT_FILE_DIR = CMakeFiles\medievo.dir\Modulo2_LinkedList\Ejercicios\Medievo
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target medievo
+
+
+#############################################
+# Link the executable medievo.exe
+
+build medievo.exe: C_EXECUTABLE_LINKER__medievo_Debug CMakeFiles/medievo.dir/Modulo2_LinkedList/Ejercicios/Medievo/medievo.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\medievo.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = medievo.exe
+  TARGET_IMPLIB = libmedievo.dll.a
+  TARGET_PDB = medievo.exe.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -589,6 +622,8 @@ build listasSimplementeEnlazadas: phony listasSimplementeEnlazadas.exe
 
 build loteria: phony loteria.exe
 
+build medievo: phony medievo.exe
+
 build spotify: phony spotify.exe
 
 # =============================================================================
@@ -599,7 +634,7 @@ build spotify: phony spotify.exe
 #############################################
 # Folder: D:/Programation/Study/Apuntes-EDD/cmake-build-debug
 
-build all: phony autosF1.exe candidatoGanador.exe candidatoQuitar.exe dumbo.exe fundaciones.exe inftube.exe loteria.exe Alumnos.exe controlArrays1.exe spotify.exe aviones.exe listasSimplementeEnlazadas.exe listasDoblementeEnlazadas.exe alumnosEnlazados.exe controlArrays2.exe
+build all: phony autosF1.exe candidatoGanador.exe candidatoQuitar.exe dumbo.exe fundaciones.exe inftube.exe loteria.exe Alumnos.exe controlArrays1.exe spotify.exe aviones.exe listasSimplementeEnlazadas.exe listasDoblementeEnlazadas.exe alumnosEnlazados.exe controlArrays2.exe medievo.exe
 
 # =============================================================================
 # Built-in targets
