@@ -186,3 +186,159 @@ struct Alumno *getAlumnoPeorPromedio(struct NodoAlumno **head) {
 
 	return alumnoPeorPromedio;
 }
+
+// el código a partir de esta linea es solo para comprobar el correcto funcionamiento del código
+void mostrarNotas(struct Evaluacion **evaluaciones, int tam) {
+	if (evaluaciones == NULL || tam == 0) {
+		printf("  []\n");
+		return;
+	}
+
+	int i;
+
+	printf("  Notas: ");
+	for (i = 0; i < tam; i++) {
+		if (evaluaciones[i] == NULL) continue;
+
+		printf("%d ", evaluaciones[i]->nota);
+	}
+	printf("\n");
+}
+
+void mostrarAlumnos(struct NodoAlumno *head) {
+	if (head == NULL) {
+		printf("NULL\n");
+		return;
+	}
+
+	printf("Lista de Alumnos:\n");
+	while (head != NULL) {
+		printf("RUT: %s, Nombre: %s, Evaluaciones: %d\n",
+			   head->dataAlumno->rut,
+			   head->dataAlumno->nombre,
+			   head->dataAlumno->tam);
+
+		mostrarNotas(head->dataAlumno->evaluaciones, head->dataAlumno->tam);
+		printf("  Promedio %.2f\n", promedio(head->dataAlumno));
+
+		head = head->sig;
+	}
+}
+
+char *inputStr(char *msj) {
+	if (msj == NULL) return NULL;
+
+	char buffer[50];
+	char *str;
+	int size;
+
+	printf("%s", msj);
+
+	scanf(" %[^\n]", buffer);
+
+	size = strlen(buffer);
+
+	str = (char *)malloc(size * sizeof(char));
+
+	if (str == NULL) return NULL;
+
+	strcpy(str, buffer);
+
+	return str;
+}
+
+void poblarEvaluaciones(struct Evaluacion **evaluaciones, int tam) {
+	if (evaluaciones == NULL) return;
+
+	struct Evaluacion *prueba;
+	int i;
+
+	for (i = 0; i < tam; i++) {
+		prueba = (struct Evaluacion *)malloc(sizeof(struct Evaluacion));
+
+		if (prueba == NULL) return;
+
+		prueba->id = i; // por poner algo
+		prueba->fecha = "01-01-2025"; // por poner algo
+
+		printf("Ingrese la nota %d: ", i + 1);
+		scanf("%d", &prueba->nota);
+
+		evaluaciones[i] = prueba;
+	}
+}
+
+struct Alumno *crearAlumno() {
+	struct Alumno *alumno;
+
+	alumno = (struct Alumno *)malloc(sizeof(struct Alumno));
+
+	if (alumno == NULL) return NULL;
+
+	alumno->rut = inputStr("Ingrese Rut: ");
+
+	if (alumno->rut == NULL) return NULL;
+
+	alumno->nombre = inputStr("Ingrese Nombre: ");
+
+	if (alumno->nombre == NULL) return NULL;
+
+	printf("Ingrese cantidad de evaluaciones: ");
+	scanf("%d", &alumno->tam);
+
+	alumno->evaluaciones = (struct Evaluacion**)malloc(alumno->tam * sizeof(struct Evaluacion *));
+
+	if (alumno->evaluaciones == NULL) return NULL;
+
+	poblarEvaluaciones(alumno->evaluaciones, alumno->tam);
+
+	return alumno;
+}
+
+int main() {
+	struct NodoAlumno *lista;
+	struct Alumno *alumno;
+	int opcion;
+
+	lista = NULL;
+	alumno = NULL;
+
+	do {
+		printf("\nMenu:\n");
+		printf("1. Agregar alumno\n");
+		printf("2. Mostrar alumnos\n");
+		printf("3. Mostrar\n");
+		printf("4. Salir\n");
+		printf("Seleccione una opcion: ");
+		scanf("%d", &opcion);
+
+		switch (opcion) {
+			case 1:
+				alumno = crearAlumno();
+				if (alumno != NULL)
+					agregarAlumno(&lista, alumno);
+				else
+					printf("Error al crear alumno.\n");
+				break;
+			case 2:
+				mostrarAlumnos(lista);
+				break;
+			case 3:
+				alumno = getAlumnoPeorPromedio(&lista);
+				if (alumno != NULL) {
+					printf("\nEl alumno con peor promedio es:\n");
+					printf("RUT: %s, Nombre: %s, Promedio: %.2f\n", alumno->rut, alumno->nombre, promedio(alumno));
+				}
+				else
+					printf("\nNo hay alumnos en la lista.\n");
+				break;
+			case 4:
+				printf("Saliendo...\n");
+				break;
+			default:
+				printf("Opcion invalida.\n");
+		}
+	} while (opcion != 4);
+
+	return 0;
+}
