@@ -1,0 +1,22 @@
+El sistema de teleoperadores telefónicos de Chile está regulado por la superintendencia de telecomunicaciones.
+Para ello, se ha decidido crear un sistema centralizado de control de clientes, planes y servicios. De esta forma:
+
+1.- El sistema de telefonía tiene un puntero a la lista de clientes de todo el país y un puntero a la lista de compañías
+a nivel nacional.
+
+2.- Los clientes son representados a través de una lista simplemente enlazada circular. Cada cliente tiene DNI, nombre,
+dirección y edad.
+
+3.- Las compañías son representadas a través de una lista doblemente enlazada. Cada compañía tiene nombre, dirección y
+un puntero al listado de planes que ofrece y a los contratos.
+
+4.- Los planes son representados a través de una lista simplemente enlazada con el uso de nodo fantasma y cada plan
+tiene número id, nombre del plan y su valor en pesos chilenos.
+
+5.- Los contratos se almacenan en un arreglo compacto de tamaño maxContratos sin el uso de pLibre. Cada contrato tiene
+número único, fecha de contratación, un puntero al plan contratado y un puntero al cliente que lo contrató.
+
+Debes programar la siguiente función:
+
+1.- int contratarPlan(struct Sistema *telefonia, int idPlan, char *dniCliente, int numeroContrato, char *fechaContrato)
+La función debe efectuar la contratación de un plan. Retorna 0 en caso de éxito, 1 en caso de fracaso.

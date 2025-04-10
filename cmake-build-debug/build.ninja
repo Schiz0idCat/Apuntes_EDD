@@ -601,6 +601,39 @@ build sistemaTransporte.exe: C_EXECUTABLE_LINKER__sistemaTransporte_Debug CMakeF
   TARGET_IMPLIB = libsistemaTransporte.dll.a
   TARGET_PDB = sistemaTransporte.exe.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target sistemaTelefonico
+
+
+#############################################
+# Order-only phony target for sistemaTelefonico
+
+build cmake_object_order_depends_target_sistemaTelefonico: phony || .
+
+build CMakeFiles/sistemaTelefonico.dir/Modulo2_LinkedList/Ejercicios/SistemaTelefonico/sistemaTelefonico.c.obj: C_COMPILER__sistemaTelefonico_unscanned_Debug D$:/Programation/Study/Apuntes-EDD/Modulo2_LinkedList/Ejercicios/SistemaTelefonico/sistemaTelefonico.c || cmake_object_order_depends_target_sistemaTelefonico
+  DEP_FILE = CMakeFiles\sistemaTelefonico.dir\Modulo2_LinkedList\Ejercicios\SistemaTelefonico\sistemaTelefonico.c.obj.d
+  FLAGS = -g -std=gnu90 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\sistemaTelefonico.dir
+  OBJECT_FILE_DIR = CMakeFiles\sistemaTelefonico.dir\Modulo2_LinkedList\Ejercicios\SistemaTelefonico
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target sistemaTelefonico
+
+
+#############################################
+# Link the executable sistemaTelefonico.exe
+
+build sistemaTelefonico.exe: C_EXECUTABLE_LINKER__sistemaTelefonico_Debug CMakeFiles/sistemaTelefonico.dir/Modulo2_LinkedList/Ejercicios/SistemaTelefonico/sistemaTelefonico.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\sistemaTelefonico.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = sistemaTelefonico.exe
+  TARGET_IMPLIB = libsistemaTelefonico.dll.a
+  TARGET_PDB = sistemaTelefonico.exe.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -657,6 +690,8 @@ build loteria: phony loteria.exe
 
 build medievo: phony medievo.exe
 
+build sistemaTelefonico: phony sistemaTelefonico.exe
+
 build sistemaTransporte: phony sistemaTransporte.exe
 
 build spotify: phony spotify.exe
@@ -669,7 +704,7 @@ build spotify: phony spotify.exe
 #############################################
 # Folder: D:/Programation/Study/Apuntes-EDD/cmake-build-debug
 
-build all: phony autosF1.exe candidatoGanador.exe candidatoQuitar.exe dumbo.exe fundaciones.exe inftube.exe loteria.exe Alumnos.exe controlArrays1.exe spotify.exe aviones.exe listasSimplementeEnlazadas.exe listasDoblementeEnlazadas.exe alumnosEnlazados.exe controlArrays2.exe medievo.exe sistemaTransporte.exe
+build all: phony autosF1.exe candidatoGanador.exe candidatoQuitar.exe dumbo.exe fundaciones.exe inftube.exe loteria.exe Alumnos.exe controlArrays1.exe spotify.exe aviones.exe listasSimplementeEnlazadas.exe listasDoblementeEnlazadas.exe alumnosEnlazados.exe controlArrays2.exe medievo.exe sistemaTransporte.exe sistemaTelefonico.exe
 
 # =============================================================================
 # Built-in targets
