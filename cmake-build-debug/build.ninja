@@ -568,6 +568,39 @@ build medievo.exe: C_EXECUTABLE_LINKER__medievo_Debug CMakeFiles/medievo.dir/Mod
   TARGET_IMPLIB = libmedievo.dll.a
   TARGET_PDB = medievo.exe.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target sistemaTransporte
+
+
+#############################################
+# Order-only phony target for sistemaTransporte
+
+build cmake_object_order_depends_target_sistemaTransporte: phony || .
+
+build CMakeFiles/sistemaTransporte.dir/Modulo2_LinkedList/Ejercicios/SistemaTransporte/sistemaTransporte.c.obj: C_COMPILER__sistemaTransporte_unscanned_Debug D$:/Programation/Study/Apuntes-EDD/Modulo2_LinkedList/Ejercicios/SistemaTransporte/sistemaTransporte.c || cmake_object_order_depends_target_sistemaTransporte
+  DEP_FILE = CMakeFiles\sistemaTransporte.dir\Modulo2_LinkedList\Ejercicios\SistemaTransporte\sistemaTransporte.c.obj.d
+  FLAGS = -g -std=gnu90 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\sistemaTransporte.dir
+  OBJECT_FILE_DIR = CMakeFiles\sistemaTransporte.dir\Modulo2_LinkedList\Ejercicios\SistemaTransporte
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target sistemaTransporte
+
+
+#############################################
+# Link the executable sistemaTransporte.exe
+
+build sistemaTransporte.exe: C_EXECUTABLE_LINKER__sistemaTransporte_Debug CMakeFiles/sistemaTransporte.dir/Modulo2_LinkedList/Ejercicios/SistemaTransporte/sistemaTransporte.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\sistemaTransporte.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = sistemaTransporte.exe
+  TARGET_IMPLIB = libsistemaTransporte.dll.a
+  TARGET_PDB = sistemaTransporte.exe.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -624,6 +657,8 @@ build loteria: phony loteria.exe
 
 build medievo: phony medievo.exe
 
+build sistemaTransporte: phony sistemaTransporte.exe
+
 build spotify: phony spotify.exe
 
 # =============================================================================
@@ -634,7 +669,7 @@ build spotify: phony spotify.exe
 #############################################
 # Folder: D:/Programation/Study/Apuntes-EDD/cmake-build-debug
 
-build all: phony autosF1.exe candidatoGanador.exe candidatoQuitar.exe dumbo.exe fundaciones.exe inftube.exe loteria.exe Alumnos.exe controlArrays1.exe spotify.exe aviones.exe listasSimplementeEnlazadas.exe listasDoblementeEnlazadas.exe alumnosEnlazados.exe controlArrays2.exe medievo.exe
+build all: phony autosF1.exe candidatoGanador.exe candidatoQuitar.exe dumbo.exe fundaciones.exe inftube.exe loteria.exe Alumnos.exe controlArrays1.exe spotify.exe aviones.exe listasSimplementeEnlazadas.exe listasDoblementeEnlazadas.exe alumnosEnlazados.exe controlArrays2.exe medievo.exe sistemaTransporte.exe
 
 # =============================================================================
 # Built-in targets

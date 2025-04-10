@@ -19,3 +19,4 @@ add_executable(listasDoblementeEnlazadas Modulo2_LinkedList/Funciones_Basicas/li
 add_executable(alumnosEnlazados Modulo2_LinkedList/Ejercicios/Alumnos/alumnosEnlazados.c)
 add_executable(controlArrays2 Modulo1_Array/Evaluaciones/Control_2/controlArrays2.c)
 add_executable(medievo Modulo2_LinkedList/Ejercicios/Medievo/medievo.c)
+add_executable(sistemaTransporte Modulo2_LinkedList/Ejercicios/SistemaTransporte/sistemaTransporte.c)
