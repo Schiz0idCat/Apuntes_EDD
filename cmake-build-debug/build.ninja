@@ -634,6 +634,39 @@ build sistemaTelefonico.exe: C_EXECUTABLE_LINKER__sistemaTelefonico_Debug CMakeF
   TARGET_IMPLIB = libsistemaTelefonico.dll.a
   TARGET_PDB = sistemaTelefonico.exe.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target ladrones
+
+
+#############################################
+# Order-only phony target for ladrones
+
+build cmake_object_order_depends_target_ladrones: phony || .
+
+build CMakeFiles/ladrones.dir/Modulo2_LinkedList/Ejercicios/Ladrones/ladrones.c.obj: C_COMPILER__ladrones_unscanned_Debug D$:/Programation/Study/Apuntes-EDD/Modulo2_LinkedList/Ejercicios/Ladrones/ladrones.c || cmake_object_order_depends_target_ladrones
+  DEP_FILE = CMakeFiles\ladrones.dir\Modulo2_LinkedList\Ejercicios\Ladrones\ladrones.c.obj.d
+  FLAGS = -g -std=gnu90 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\ladrones.dir
+  OBJECT_FILE_DIR = CMakeFiles\ladrones.dir\Modulo2_LinkedList\Ejercicios\Ladrones
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target ladrones
+
+
+#############################################
+# Link the executable ladrones.exe
+
+build ladrones.exe: C_EXECUTABLE_LINKER__ladrones_Debug CMakeFiles/ladrones.dir/Modulo2_LinkedList/Ejercicios/Ladrones/ladrones.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\ladrones.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = ladrones.exe
+  TARGET_IMPLIB = libladrones.dll.a
+  TARGET_PDB = ladrones.exe.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -682,6 +715,8 @@ build fundaciones: phony fundaciones.exe
 
 build inftube: phony inftube.exe
 
+build ladrones: phony ladrones.exe
+
 build listasDoblementeEnlazadas: phony listasDoblementeEnlazadas.exe
 
 build listasSimplementeEnlazadas: phony listasSimplementeEnlazadas.exe
@@ -704,7 +739,7 @@ build spotify: phony spotify.exe
 #############################################
 # Folder: D:/Programation/Study/Apuntes-EDD/cmake-build-debug
 
-build all: phony autosF1.exe candidatoGanador.exe candidatoQuitar.exe dumbo.exe fundaciones.exe inftube.exe loteria.exe Alumnos.exe controlArrays1.exe spotify.exe aviones.exe listasSimplementeEnlazadas.exe listasDoblementeEnlazadas.exe alumnosEnlazados.exe controlArrays2.exe medievo.exe sistemaTransporte.exe sistemaTelefonico.exe
+build all: phony autosF1.exe candidatoGanador.exe candidatoQuitar.exe dumbo.exe fundaciones.exe inftube.exe loteria.exe Alumnos.exe controlArrays1.exe spotify.exe aviones.exe listasSimplementeEnlazadas.exe listasDoblementeEnlazadas.exe alumnosEnlazados.exe controlArrays2.exe medievo.exe sistemaTransporte.exe sistemaTelefonico.exe ladrones.exe
 
 # =============================================================================
 # Built-in targets
