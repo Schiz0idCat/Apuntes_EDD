@@ -26,11 +26,7 @@ struct Curso {
 };
 
 struct NodoAlumno *crearNodo(struct Alumno *alumno) {
-	if (alumno == NULL) return NULL;
-
-	struct NodoAlumno *nuevo;
-
-	nuevo = (struct NodoAlumno *)malloc(sizeof(struct NodoAlumno));
+	struct NodoAlumno *nuevo = (struct NodoAlumno *)malloc(sizeof(struct NodoAlumno));
 
 	if (nuevo == NULL) return NULL;
 
@@ -41,17 +37,13 @@ struct NodoAlumno *crearNodo(struct Alumno *alumno) {
 }
 
 int enlazarNodo(struct NodoAlumno **head, struct NodoAlumno *nuevo) {
-	if (head == NULL || nuevo == NULL) return 1;
-
 	if (*head == NULL) { // la lista está vacía
 		*head = nuevo;
 
 		return 0;
 	}
 
-	struct NodoAlumno *rec;
-
-	rec = *head;
+	struct NodoAlumno *rec = *head;
 
 	while (rec->sig != NULL) // se llega al último elemento
 		rec = rec->sig;
@@ -62,8 +54,6 @@ int enlazarNodo(struct NodoAlumno **head, struct NodoAlumno *nuevo) {
 }
 
 struct Alumno *buscarAlumno(struct NodoAlumno *head, char *rut) {
-	if (head == NULL || rut == NULL) return NULL;
-
 	while (head != NULL) {
 		if (strcmp(head->dataAlumno->rut, rut) == 0)
 			return head->dataAlumno;
@@ -75,11 +65,7 @@ struct Alumno *buscarAlumno(struct NodoAlumno *head, char *rut) {
 }
 
 int agregarAlumno(struct NodoAlumno **head, struct Alumno *nuevoAlumno) {
-	if (head == NULL || nuevoAlumno == NULL) return 1;
-
-	struct Alumno *alumnoAux;
-
-	alumnoAux = buscarAlumno(*head, nuevoAlumno->rut);
+	struct Alumno *alumnoAux = buscarAlumno(*head, nuevoAlumno->rut);
 
 	if (alumnoAux != NULL) return 1; // se econtró al alumno, no se agrega
 
@@ -89,14 +75,9 @@ int agregarAlumno(struct NodoAlumno **head, struct Alumno *nuevoAlumno) {
 }
 
 struct Alumno *quitarAlumno(struct NodoAlumno **head, char *rut) {
-	if (head == NULL || *head == NULL) return NULL;
+	struct NodoAlumno *act = *head, *prev = NULL;
 
-	struct NodoAlumno *act, *prev;
-
-	act = *head;
-	prev = NULL;
-
-	if (strcmp(act->dataAlumno->rut, rut) == 0) {
+	if (strcmp((*head)->dataAlumno->rut, rut) == 0) {
 		*head = act->sig;
 
 		return act->dataAlumno;
@@ -114,47 +95,17 @@ struct Alumno *quitarAlumno(struct NodoAlumno **head, char *rut) {
 	return act->dataAlumno;
 }
 
-/*
-float calcularPromedio(struct NodoAlumno *head, char *rut) { // esta fue la función promedio pedida en clases
-	if (rut == NULL) return 0.0f;
-
-	struct Alumno *alumno;
-
-	alumno = buscarAlumno(head, rut);
-
-	if (alumno == NULL || alumno->evaluaciones == NULL) return 0.0f;
-
+float promedio(struct Evaluacion **evaluaciones, int tam) {
 	int i, totalPuntaje, cantidadEvaluaciones;
 
 	totalPuntaje = 0;
 	cantidadEvaluaciones = 0;
 
-	for (i = 0; i < alumno->tam; i++) {
-		if (alumno->evaluaciones[i] == NULL) continue;
-
-		totalPuntaje += alumno->evaluaciones[i]->nota;
-		cantidadEvaluaciones++;
-	}
-
-	if (cantidadEvaluaciones <= 0) return 0.0f;
-
-	return (float)totalPuntaje / (float)cantidadEvaluaciones;
-}
-*/
-
-float promedio(struct Alumno *alumno) { // mi versión de la función promedio (pensé que sería mejor para la sgte función)
-	if (alumno == NULL || alumno->evaluaciones == NULL) return 0.0f;
-
-	int i, totalPuntaje, cantidadEvaluaciones;
-
-	totalPuntaje = 0;
-	cantidadEvaluaciones = 0;
-
-	for (i = 0; i < alumno->tam; i++) {
-		if (alumno->evaluaciones[i] == NULL) continue;
-
-		totalPuntaje += alumno->evaluaciones[i]->nota;
-		cantidadEvaluaciones++;
+	for (i = 0; i < tam; i++) {
+		if (evaluaciones[i] != NULL) {
+			totalPuntaje += evaluaciones[i]->nota;
+			cantidadEvaluaciones++;
+		}
 	}
 
 	if (cantidadEvaluaciones <= 0) return 0.0f;
@@ -162,186 +113,29 @@ float promedio(struct Alumno *alumno) { // mi versión de la función promedio (
 	return (float)totalPuntaje / (float)cantidadEvaluaciones;
 }
 
-struct Alumno *getAlumnoPeorPromedio(struct NodoAlumno **head) {
-	if (head == NULL || *head == NULL) return NULL;
-
-	struct NodoAlumno *rec;
-	struct Alumno *alumnoPeorPromedio;
-	float peorPromedio;
-
-	alumnoPeorPromedio = NULL;
-	rec = *head;
+struct Alumno *getAlumnoPeorPromedio(struct NodoAlumno *head) {
+	struct NodoAlumno *rec = head;
+	struct Alumno *alumnoPeorPromedio = NULL;
+	float peorPromedio = 0.0f;
 
 	while (rec != NULL) {
-		if (alumnoPeorPromedio == NULL || promedio(rec->dataAlumno) < peorPromedio) {
+		struct Alumno *aux = rec->dataAlumno;
+
+		if (alumnoPeorPromedio == NULL || promedio(aux->evaluaciones, aux->tam) < peorPromedio) {
 			alumnoPeorPromedio = rec->dataAlumno;
-			peorPromedio = promedio(alumnoPeorPromedio);
+			peorPromedio = promedio(aux->evaluaciones, aux->tam);
 		}
 
 		rec = rec->sig;
 	}
 
-	// quitarAlumno(head, alumnoPeorPromedio->rut); // no recuedo si pedía quitar al alumno
-
 	return alumnoPeorPromedio;
 }
 
-// el código a partir de esta linea es solo para comprobar el correcto funcionamiento del código
-void mostrarNotas(struct Evaluacion **evaluaciones, int tam) {
-	if (evaluaciones == NULL || tam == 0) {
-		printf("  []\n");
-		return;
-	}
+struct Alumno *quitarAlumnoPeorPromedio(struct NodoAlumno **head) {
+	struct Alumno *alumnoPeorPromedio = getAlumnoPeorPromedio(*head);
 
-	int i;
+	if (alumnoPeorPromedio == NULL) return NULL;
 
-	printf("    Notas: ");
-	for (i = 0; i < tam; i++) {
-		if (evaluaciones[i] == NULL) continue;
-
-		printf("%d ", evaluaciones[i]->nota);
-	}
-	printf("\n");
-}
-
-void mostrarAlumno(struct Alumno *alumno) {
-	if (alumno == NULL) return;
-
-	printf("RUT: %s, Nombre: %s, Evaluaciones: %d\n", alumno->rut, alumno->nombre, alumno->tam);
-	mostrarNotas(alumno->evaluaciones, alumno->tam);
-	printf("    Promedio: %.2f\n\n", promedio(alumno));
-}
-
-void mostrarListaAlumnos(struct NodoAlumno *head) {
-	if (head == NULL) {
-		printf("NULL\n");
-		return;
-	}
-
-	printf("Lista de Alumnos:\n");
-	while (head != NULL) {
-		mostrarAlumno(head->dataAlumno);
-
-		head = head->sig;
-	}
-}
-
-char *inputStr(char *msj) {
-	if (msj == NULL) return NULL;
-
-	char buffer[50];
-	char *str;
-	int size;
-
-	printf("%s", msj);
-
-	scanf(" %[^\n]", buffer);
-
-	size = (int)strlen(buffer);
-
-	str = (char *)malloc(size * sizeof(char));
-
-	if (str == NULL) return NULL;
-
-	strcpy(str, buffer);
-
-	return str;
-}
-
-void poblarEvaluaciones(struct Evaluacion **evaluaciones, int tam) {
-	if (evaluaciones == NULL) return;
-
-	struct Evaluacion *prueba;
-	int i;
-
-	for (i = 0; i < tam; i++) {
-		prueba = (struct Evaluacion *)malloc(sizeof(struct Evaluacion));
-
-		if (prueba == NULL) return;
-
-		prueba->id = i; // por poner algo
-		prueba->fecha = "01-01-2025"; // por poner algo
-
-		printf("Ingrese la nota %d: ", i + 1);
-		scanf("%d", &prueba->nota);
-
-		evaluaciones[i] = prueba;
-	}
-}
-
-struct Alumno *crearAlumno() {
-	struct Alumno *alumno;
-
-	alumno = (struct Alumno *)malloc(sizeof(struct Alumno));
-
-	if (alumno == NULL) return NULL;
-
-	alumno->rut = inputStr("Ingrese Rut: ");
-
-	if (alumno->rut == NULL) return NULL;
-
-	alumno->nombre = inputStr("Ingrese Nombre: ");
-
-	if (alumno->nombre == NULL) return NULL;
-
-	printf("Ingrese cantidad de evaluaciones: ");
-	scanf("%d", &alumno->tam);
-
-	alumno->evaluaciones = (struct Evaluacion**)malloc(alumno->tam * sizeof(struct Evaluacion *));
-
-	if (alumno->evaluaciones == NULL) return NULL;
-
-	poblarEvaluaciones(alumno->evaluaciones, alumno->tam);
-
-	return alumno;
-}
-
-int main() {
-	struct NodoAlumno *lista;
-	struct Alumno *alumno;
-	int opcion;
-
-	lista = NULL;
-	alumno = NULL;
-
-	do {
-		printf("Menu:\n");
-		printf("1. Agregar alumno\n");
-		printf("2. Mostrar alumnos\n");
-		printf("3. Mostrar peor promedio\n");
-		printf("4. Salir\n");
-		printf("Seleccione una opcion: ");
-		scanf("%d", &opcion);
-
-		switch (opcion) {
-			case 1:
-				alumno = crearAlumno();
-				if (alumno != NULL) {
-					agregarAlumno(&lista, alumno);
-					printf("\n");
-				}
-				else
-					printf("Error al crear alumno.\n");
-				break;
-			case 2:
-				mostrarListaAlumnos(lista);
-				break;
-			case 3:
-				alumno = getAlumnoPeorPromedio(&lista);
-				if (alumno != NULL) {
-					printf("El alumno con peor promedio es:\n");
-					mostrarAlumno(alumno);
-				}
-				else
-					printf("\nNo hay alumnos en la lista.\n");
-				break;
-			case 4:
-				printf("Saliendo...\n");
-				break;
-			default:
-				printf("Opcion invalida.\n");
-		}
-	} while (opcion != 4);
-
-	return 0;
+	return quitarAlumno(head, alumnoPeorPromedio->rut);
 }
