@@ -37,8 +37,6 @@ struct BandaCriminal {
 };
 
 float promedioRobos(struct Robo **robos, int pLibre) {
-	if (robos == NULL || pLibre == 0) return 0.0f;
-
 	int i, totalRobado = 0;
 
 	for (i = 0; i < pLibre && robos[i] != NULL; i++) {
@@ -49,14 +47,11 @@ float promedioRobos(struct Robo **robos, int pLibre) {
 }
 
 float promedioTotalRobado(struct NodoLadron *ladrones) {
-	if (ladrones == NULL) return 0.0f;
-
 	struct NodoLadron *rec = ladrones;
-	struct Ladron *ladron;
 	int i, cantidadLadrones = 0, totalRobado = 0;
 
 	do {
-		ladron = rec->datosLadron;
+		struct Ladron *ladron = rec->datosLadron;
 		cantidadLadrones++;
 
 		for (i = 0; i < ladron->pLibreRobos && ladron->robos[i] != NULL; i++) {

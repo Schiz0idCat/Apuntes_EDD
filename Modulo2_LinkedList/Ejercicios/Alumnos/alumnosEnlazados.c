@@ -119,11 +119,11 @@ struct Alumno *getAlumnoPeorPromedio(struct NodoAlumno *head) {
 	float peorPromedio = 0.0f;
 
 	while (rec != NULL) {
-		struct Alumno *aux = rec->dataAlumno;
+		struct Alumno *alumno = rec->dataAlumno;
 
-		if (alumnoPeorPromedio == NULL || promedio(aux->evaluaciones, aux->tam) < peorPromedio) {
+		if (alumnoPeorPromedio == NULL || promedio(alumno->evaluaciones, alumno->tam) < peorPromedio) {
 			alumnoPeorPromedio = rec->dataAlumno;
-			peorPromedio = promedio(aux->evaluaciones, aux->tam);
+			peorPromedio = promedio(alumno->evaluaciones, alumno->tam);
 		}
 
 		rec = rec->sig;
