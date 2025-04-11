@@ -46,8 +46,8 @@ float promedioRobos(struct Robo **robos, int pLibre) {
 	return (float)totalRobado / (float)pLibre;
 }
 
-float promedioTotalRobado(struct NodoLadron *ladrones) {
-	struct NodoLadron *rec = ladrones;
+float promedioTotalRobado(struct NodoLadron *head) {
+	struct NodoLadron *rec = head;
 	int i, cantidadLadrones = 0, totalRobado = 0;
 
 	do {
@@ -59,11 +59,25 @@ float promedioTotalRobado(struct NodoLadron *ladrones) {
 		}
 
 		rec = rec->sig;
-	} while (rec != ladrones);
+	} while (rec != head);
 
 	if (cantidadLadrones == 0) return 0.0f;
 
 	return (float)totalRobado / (float)cantidadLadrones;
+}
+
+int contarLadronesNoRentables(struct NodoLadron *head, float promedioGeneral) {
+	struct NodoLadron *rec = head;
+	int cantidad = 0;
+
+	do {
+		if (promedioRobos(rec->datosLadron->robos, rec->datosLadron->pLibreRobos) < promedioGeneral)
+			cantidad++;
+
+		rec = rec->sig;
+	} while (rec != head);
+
+	return cantidad;
 }
 
 struct Ladron **quitarLadronesMenosRentables(struct BandaCriminal *LosCareNodo) {
