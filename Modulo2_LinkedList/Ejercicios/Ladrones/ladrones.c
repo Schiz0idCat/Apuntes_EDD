@@ -80,6 +80,62 @@ int contarLadronesNoRentables(struct NodoLadron *head, float promedioGeneral) {
 	return cantidad;
 }
 
-struct Ladron **quitarLadronesMenosRentables(struct BandaCriminal *LosCareNodo) {
+int desenlazarLadron(struct NodoLadron **head, struct Ladron *ladron) {
+	if ((*head)->datosLadron == ladron) {
+		if ((*head)->sig == *head)
+			*head = NULL;
+		else {
+			struct NodoLadron *ultimo = *head;
 
+			while (ultimo->sig != *head)
+				ultimo = ultimo->sig;
+
+			*head = (*head)->sig;
+			ultimo->sig = *head;
+		}
+
+		return 0;
+	}
+
+	struct NodoLadron *act = (*head)->sig, *ant = *head;
+
+	while (act != *head) {
+		if (act->datosLadron == ladron) {
+			ant->sig = act->sig;
+			return 0;
+		}
+
+		ant = act;
+		act = act->sig;
+	}
+
+	return 1;
+}
+
+void poblarMenosRentables(struct Ladron **menosRentables, int n, struct NodoLadron **headLadrones, float promedio) {
+	int i = 0;
+
+	struct NodoLadron *rec = *headLadrones;
+
+	do {
+		if (promedioRobos(rec->datosLadron->robos, rec->datosLadron->pLibreRobos) < promedio) {
+			menosRentables[i++] = rec->datosLadron;
+
+			desenlazarLadron(headLadrones, rec->datosLadron);
+		}
+
+		rec = rec->sig;
+	} while (rec != *headLadrones);
+}
+
+struct Ladron **quitarLadronesMenosRentables(struct BandaCriminal *LosCareNodo) {
+	float promedioRobado = promedioTotalRobado(LosCareNodo->headLadrones);
+	int nMenosRentables = contarLadronesNoRentables(LosCareNodo->headLadrones, promedioRobado);
+	struct Ladron **menosRentables = (struct Ladron **)malloc(nMenosRentables * sizeof(struct Ladron *));
+
+	if (menosRentables == NULL) return NULL;
+
+	poblarMenosRentables(menosRentables, nMenosRentables, &LosCareNodo->headLadrones, promedioRobado);
+
+	return menosRentables;
 }
