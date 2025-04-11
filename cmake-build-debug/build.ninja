@@ -667,6 +667,39 @@ build ladrones.exe: C_EXECUTABLE_LINKER__ladrones_Debug CMakeFiles/ladrones.dir/
   TARGET_IMPLIB = libladrones.dll.a
   TARGET_PDB = ladrones.exe.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target circularesSimplementeEnlazadas
+
+
+#############################################
+# Order-only phony target for circularesSimplementeEnlazadas
+
+build cmake_object_order_depends_target_circularesSimplementeEnlazadas: phony || .
+
+build CMakeFiles/circularesSimplementeEnlazadas.dir/Modulo2_LinkedList/Funciones_Basicas/circularesSimplementeEnlazadas.c.obj: C_COMPILER__circularesSimplementeEnlazadas_unscanned_Debug D$:/Programation/Study/Apuntes-EDD/Modulo2_LinkedList/Funciones_Basicas/circularesSimplementeEnlazadas.c || cmake_object_order_depends_target_circularesSimplementeEnlazadas
+  DEP_FILE = CMakeFiles\circularesSimplementeEnlazadas.dir\Modulo2_LinkedList\Funciones_Basicas\circularesSimplementeEnlazadas.c.obj.d
+  FLAGS = -g -std=gnu90 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\circularesSimplementeEnlazadas.dir
+  OBJECT_FILE_DIR = CMakeFiles\circularesSimplementeEnlazadas.dir\Modulo2_LinkedList\Funciones_Basicas
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target circularesSimplementeEnlazadas
+
+
+#############################################
+# Link the executable circularesSimplementeEnlazadas.exe
+
+build circularesSimplementeEnlazadas.exe: C_EXECUTABLE_LINKER__circularesSimplementeEnlazadas_Debug CMakeFiles/circularesSimplementeEnlazadas.dir/Modulo2_LinkedList/Funciones_Basicas/circularesSimplementeEnlazadas.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\circularesSimplementeEnlazadas.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = circularesSimplementeEnlazadas.exe
+  TARGET_IMPLIB = libcircularesSimplementeEnlazadas.dll.a
+  TARGET_PDB = circularesSimplementeEnlazadas.exe.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -705,6 +738,8 @@ build candidatoGanador: phony candidatoGanador.exe
 
 build candidatoQuitar: phony candidatoQuitar.exe
 
+build circularesSimplementeEnlazadas: phony circularesSimplementeEnlazadas.exe
+
 build controlArrays1: phony controlArrays1.exe
 
 build controlArrays2: phony controlArrays2.exe
@@ -739,7 +774,7 @@ build spotify: phony spotify.exe
 #############################################
 # Folder: D:/Programation/Study/Apuntes-EDD/cmake-build-debug
 
-build all: phony autosF1.exe candidatoGanador.exe candidatoQuitar.exe dumbo.exe fundaciones.exe inftube.exe loteria.exe Alumnos.exe controlArrays1.exe spotify.exe aviones.exe listasSimplementeEnlazadas.exe listasDoblementeEnlazadas.exe alumnosEnlazados.exe controlArrays2.exe medievo.exe sistemaTransporte.exe sistemaTelefonico.exe ladrones.exe
+build all: phony autosF1.exe candidatoGanador.exe candidatoQuitar.exe dumbo.exe fundaciones.exe inftube.exe loteria.exe Alumnos.exe controlArrays1.exe spotify.exe aviones.exe listasSimplementeEnlazadas.exe listasDoblementeEnlazadas.exe alumnosEnlazados.exe controlArrays2.exe medievo.exe sistemaTransporte.exe sistemaTelefonico.exe ladrones.exe circularesSimplementeEnlazadas.exe
 
 # =============================================================================
 # Built-in targets

@@ -66,7 +66,7 @@ int modificarNodo(struct Nodo *head, int valorViejo, int valorNuevo) {
 	return 0;
 }
 
-struct Nodo *eliminarNodo(struct Nodo **head, int valor) {
+struct Nodo *desenlazarNodo(struct Nodo **head, int valor) {
 	if (head == NULL || *head == NULL) return NULL;
 
 	struct Nodo *nodoEliminar;
@@ -155,7 +155,7 @@ int main() {
 
 	mostrarLista(numeros);
 
-	eliminarNodo(&numeros, 0);
+	desenlazarNodo(&numeros, 0);
 
 	mostrarLista(numeros);
 
@@ -163,7 +163,7 @@ int main() {
 
 	mostrarLista(numeros);
 
-	eliminarNodo(&numeros, 11);
+	desenlazarNodo(&numeros, 11);
 
 	mostrarLista(numeros);
 
@@ -171,7 +171,7 @@ int main() {
 
 	mostrarLista(numeros);
 
-	eliminarNodo(&numeros, 9);
+	desenlazarNodo(&numeros, 9);
 
 	mostrarLista(numeros);
 

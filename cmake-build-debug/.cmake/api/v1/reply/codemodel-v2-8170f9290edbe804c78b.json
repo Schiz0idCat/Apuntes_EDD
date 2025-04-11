@@ -33,7 +33,8 @@
 						15,
 						16,
 						17,
-						18
+						18,
+						19
 					]
 				}
 			],
@@ -66,7 +67,8 @@
 						15,
 						16,
 						17,
-						18
+						18,
+						19
 					]
 				}
 			],
@@ -112,6 +114,13 @@
 					"id" : "candidatoQuitar::@6890427a1f51a3e7e1df",
 					"jsonFile" : "target-candidatoQuitar-Debug-5a386a9da88e9f8d53e3.json",
 					"name" : "candidatoQuitar",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "circularesSimplementeEnlazadas::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-circularesSimplementeEnlazadas-Debug-40b7ada73c7c9ab85029.json",
+					"name" : "circularesSimplementeEnlazadas",
 					"projectIndex" : 0
 				},
 				{
