@@ -1,0 +1,50 @@
+La Fórmula 1 es uno de los deportes automovilísticos más prestigiosos y emocionantes del mundo. Se trata de una
+competencia glogal en la que los mejores pilotos y equipos se enfrentan en circuitos de alta velocidad, combinando
+habilidad, estrategia y tecnología de punta. Cada carrera, conocida como Gran Premio, pone a prueba no solo la destreza
+de los competidores, sino también la ingeniosidad de las máquinas que conducen, diseñadas para alcanzar velocidades
+superiores a los 300 km/h.
+
+En este deporte, un piloto es el protagonista al volante. Es un deportista altamente capacitado que debe dominar tanto
+la conducción precisa como la toma de decisiones bajo presión. Los pilotos representan a sus equipos y son los
+encargados de llevar al límite los monoplazas, vehículos de carrera diseñados específicamente para la Fórmula 1.
+Nombres como Lewis Hamilton, Ayrton Senna o Max Verstappen han dejado su huella en la historia gracias a su talento y
+carisma. Por su parte, una escudería es el quipo detrás del piloto. Estas organizaciones, como Ferrari McLaren o Red
+Bull Racing, son responsables de diseñar, construir y mantener los monoplazas, además de planificar las estrategias para
+cada carrera. Las escuderías compiten no solo por la gloria en las pistas, sino también por el Campeonato de
+Constructores, un título que reconoce al equipo más exitoso de la temporada.
+
+Finalmente, un campeón mundial es el piloto que logra acumular la mayor cantidad de puntos a lo largo de una temporada,
+demostrando consistencia y excelencia en múltiples Grandes Premios. Este título, otorgado desde 1950, es el máximo honor
+en la Fórmula 1 y consagrada a figuras legendarias como Micheal Schumacher o Lewis Hamilton como íconos del
+automovilístico.
+
+Para este año, la FIA (fédération Internationale de L'Automobile) le ha solicitado implementar un sistema que cuente con
+lo siguiente:
+
+● Un Piloto tine su nombre, nacionalidad, nombre de la Scuderia que representa y un contador de las veces que ha sido
+campeón del mundo.
+
+● Un arreglo compacto de tamaño tamArreglo con el uso de pLibre que almacena punteros a los pilotos que históricamente
+han participado en la Fórmula 1
+
+struct Piloto {
+    char *nombre;
+    char *nacionalidad;
+    char *scuderia;
+    int vecesCampeon;
+};
+
+int void(void) {
+    struct Piloto **pilotos;
+    int tamArreglo, pLibre = 0;
+    return 0;
+}
+
+Se solicita implementar la siguiente función:
+
+1.- struct Piloto **getHistoricoCampeones(struct Piloto **pilotos, int pLibre)
+Esta función recibe por parámetro una referencia al arreglo de los pilotos que han sido participantes de la Fórmula 1 y
+la variable pLibre asociada a este arreglo compacto. La función deberá un arreglo compacto de tamaño exacto con punteros
+a aquellos pilotos que han sido al menos 1 vez campeones del mundo. En el caso de que no existan pilotos que cumpan con
+la condición, se deberá retornar NULL. No puede ocupar arreglos auxiliares a excepción del arreglo que se le solicita
+retornar.

@@ -733,6 +733,39 @@ build inversiones.exe: C_EXECUTABLE_LINKER__inversiones_Debug CMakeFiles/inversi
   TARGET_IMPLIB = libinversiones.dll.a
   TARGET_PDB = inversiones.exe.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target prueba1
+
+
+#############################################
+# Order-only phony target for prueba1
+
+build cmake_object_order_depends_target_prueba1: phony || .
+
+build CMakeFiles/prueba1.dir/Modulo1_Array/Evaluaciones/Prueba/prueba1.c.obj: C_COMPILER__prueba1_unscanned_Debug D$:/Programation/Study/Apuntes-EDD/Modulo1_Array/Evaluaciones/Prueba/prueba1.c || cmake_object_order_depends_target_prueba1
+  DEP_FILE = CMakeFiles\prueba1.dir\Modulo1_Array\Evaluaciones\Prueba\prueba1.c.obj.d
+  FLAGS = -g -std=gnu90 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\prueba1.dir
+  OBJECT_FILE_DIR = CMakeFiles\prueba1.dir\Modulo1_Array\Evaluaciones\Prueba
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target prueba1
+
+
+#############################################
+# Link the executable prueba1.exe
+
+build prueba1.exe: C_EXECUTABLE_LINKER__prueba1_Debug CMakeFiles/prueba1.dir/Modulo1_Array/Evaluaciones/Prueba/prueba1.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\prueba1.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = prueba1.exe
+  TARGET_IMPLIB = libprueba1.dll.a
+  TARGET_PDB = prueba1.exe.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -795,6 +828,8 @@ build loteria: phony loteria.exe
 
 build medievo: phony medievo.exe
 
+build prueba1: phony prueba1.exe
+
 build sistemaTelefonico: phony sistemaTelefonico.exe
 
 build sistemaTransporte: phony sistemaTransporte.exe
@@ -809,7 +844,7 @@ build spotify: phony spotify.exe
 #############################################
 # Folder: D:/Programation/Study/Apuntes-EDD/cmake-build-debug
 
-build all: phony autosF1.exe candidatoGanador.exe candidatoQuitar.exe dumbo.exe fundaciones.exe inftube.exe loteria.exe Alumnos.exe controlArrays1.exe spotify.exe aviones.exe listasSimplementeEnlazadas.exe listasDoblementeEnlazadas.exe alumnosEnlazados.exe controlArrays2.exe medievo.exe sistemaTransporte.exe sistemaTelefonico.exe ladrones.exe circularesSimplementeEnlazadas.exe inversiones.exe
+build all: phony autosF1.exe candidatoGanador.exe candidatoQuitar.exe dumbo.exe fundaciones.exe inftube.exe loteria.exe Alumnos.exe controlArrays1.exe spotify.exe aviones.exe listasSimplementeEnlazadas.exe listasDoblementeEnlazadas.exe alumnosEnlazados.exe controlArrays2.exe medievo.exe sistemaTransporte.exe sistemaTelefonico.exe ladrones.exe circularesSimplementeEnlazadas.exe inversiones.exe prueba1.exe
 
 # =============================================================================
 # Built-in targets

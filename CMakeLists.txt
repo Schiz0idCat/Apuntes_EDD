@@ -24,3 +24,4 @@ add_executable(sistemaTelefonico Modulo2_LinkedList/Ejercicios/SistemaTelefonico
 add_executable(ladrones Modulo2_LinkedList/Ejercicios/Ladrones/ladrones.c)
 add_executable(circularesSimplementeEnlazadas Modulo2_LinkedList/Funciones_Basicas/circularesSimplementeEnlazadas.c)
 add_executable(inversiones Modulo2_LinkedList/Ejercicios/Inversiones/inversiones.c)
+add_executable(prueba1 Modulo1_Array/Evaluaciones/Prueba/prueba1.c)
