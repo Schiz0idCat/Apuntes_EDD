@@ -9,31 +9,18 @@ struct Avion {
 };
 
 float promedio(struct Avion **aviones, int pLibre) {
-	if (aviones == NULL || pLibre <= 0) return 0.0f;
+	int i, total = 0;
 
-	int i, total;
-
-	total = 0;
-
-	for (i = 0; i < pLibre; i++) {
-		if (aviones[i] == NULL) continue; // No es necesario, dado que el array es compacto
-
+	for (i = 0; i < pLibre; i++)
 		total += aviones[i]->capacidad;
-	}
 
 	return (float)total / (float)pLibre;
 }
 
 int cantidadBajaCapacidad(struct Avion **aviones, int pLibre, float capacidadPromedio) {
-	if (aviones == NULL || pLibre <= 0) return 0;
-
-	int i, totalBajaCapacidad;
-
-	totalBajaCapacidad = 0;
+	int i, totalBajaCapacidad = 0;
 
 	for (i = 0; i < pLibre; i++) {
-		if (aviones[i] == NULL) continue; // No es necesario, dado que el array es compacto
-
 		if (aviones[i]->capacidad < (int)capacidadPromedio)
 			totalBajaCapacidad++;
 	}
@@ -42,12 +29,10 @@ int cantidadBajaCapacidad(struct Avion **aviones, int pLibre, float capacidadPro
 }
 
 int quitarCompactar(struct Avion **aviones, int *pLibre, int id) {
-	if (aviones == NULL) return 1;
-
 	int i, j;
 
 	for (i = 0; i < *pLibre; i++) {
-		if (aviones[i] == NULL || aviones[i]->id != id) continue; // No es necesario lo de NULL, sabes porqué
+		if (aviones[i] == NULL || aviones[i]->id != id) continue;
 
 		aviones[i] == NULL;
 
@@ -63,33 +48,29 @@ int quitarCompactar(struct Avion **aviones, int *pLibre, int id) {
 	return 0;
 }
 
-struct Avion **quitarAvionesBajaCapacidad(struct Avion **aviones, int *pLibre) {
-	if (aviones == NULL || pLibre == NULL) return NULL;
-
-	int i, totalAvionesQuitados, iQuitados;
-	float promedioCapacidad;
-	struct Avion **quitados;
-
-	iQuitados = 0;
-	promedioCapacidad = promedio(aviones, *pLibre);
-	totalAvionesQuitados = cantidadBajaCapacidad(aviones, *pLibre, promedioCapacidad);
-
-	if (totalAvionesQuitados <= 0) return NULL;
-
-	quitados = (struct Avion **)malloc(totalAvionesQuitados * sizeof(struct Avion *));
-
-	if (quitados == NULL) return NULL;
+void poblarAvionesBajaCapacidad(struct Avion **bajaCapacidad, struct Avion **aviones, int *pLibre, float promedioCapacidad) {
+	int i, iBajaCapacidad = 0;
 
 	for (i = 0; i < *pLibre; i++) {
-		if (aviones[i] == NULL) continue; // No es necesario, dado que el array es compacto
-
 		if (aviones[i]->capacidad < (int)promedioCapacidad) {
-			quitados[iQuitados] = aviones[i];
-			iQuitados++;
+			bajaCapacidad[iBajaCapacidad++] = aviones[i];
 
 			quitarCompactar(aviones, pLibre, aviones[i]->id);
 		}
 	}
+}
 
-	return quitados;
+struct Avion **quitarAvionesBajaCapacidad(struct Avion **aviones, int *pLibre) {
+	float promedioCapacidad = promedio(aviones, *pLibre);
+	int nBajaCapacidad = cantidadBajaCapacidad(aviones, *pLibre, promedioCapacidad);
+
+	if (nBajaCapacidad <= 0) return NULL;
+
+	struct Avion **bajaCapacidad = (struct Avion **)malloc(nBajaCapacidad * sizeof(struct Avion *));
+
+	if (bajaCapacidad == NULL) return NULL;
+
+	poblarAvionesBajaCapacidad(bajaCapacidad, aviones, pLibre, promedioCapacidad);
+
+	return bajaCapacidad;
 }
