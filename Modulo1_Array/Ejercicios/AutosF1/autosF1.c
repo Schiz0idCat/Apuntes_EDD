@@ -19,16 +19,10 @@ struct Auto {
 };
 
 struct Auto *ganadorEnEquipo(struct Auto **autos, int pLibre) {
-	if (autos == NULL) return NULL;
-
 	int i;
-	struct Auto *ganador;
-
-	ganador = NULL;
+	struct Auto *ganador = NULL;
 
 	for (i = 0; i < pLibre; i++) {
-		if (autos[i] == NULL || autos[i]->cantidadVictorias == 0) continue;
-
 		if (ganador == NULL || autos[i]->cantidadVictorias > ganador->cantidadVictorias)
 			ganador = autos[i];
 	}
@@ -37,16 +31,10 @@ struct Auto *ganadorEnEquipo(struct Auto **autos, int pLibre) {
 }
 
 int cantGanadores(struct Equipo **equipos) {
-	if (equipos == NULL) return 0;
-
-	int i, nGanadores;
-
-	nGanadores = 0;
+	int i, nGanadores = 0;
 
 	for (i = 0; i < cantEquipos; i++) {
-		if (equipos[i] == NULL) continue;
-
-		if (ganadorEnEquipo(equipos[i]->Autos, equipos[i]->pLibre) != NULL)
+		if (equipos[i] != NULL && ganadorEnEquipo(equipos[i]->Autos, equipos[i]->pLibre) != NULL)
 			nGanadores++;
 	}
 
@@ -54,36 +42,28 @@ int cantGanadores(struct Equipo **equipos) {
 }
 
 void poblarGanadores(struct Auto **ganadores, struct Equipo **equipos) {
-	if (ganadores == NULL || equipos == NULL) return;
-
-	int i, iGanadores;
+	int i, iGanadores = 0;
 	struct Auto *ganador;
 
-	iGanadores = 0;
-
 	for (i = 0; i < cantEquipos; i++) {
-		if (equipos[i] == NULL) continue;
+		if (equipos[i] != NULL) {
+			ganador = ganadorEnEquipo(equipos[i]->Autos, equipos[i]->pLibre);
 
-		ganador = ganadorEnEquipo(equipos[i]->Autos, equipos[i]->pLibre);
-
-		if (ganador == NULL) continue;
-
-		ganadores[iGanadores] = ganador;
-		iGanadores++;
+			if (ganador != NULL) {
+				ganadores[iGanadores] = ganador;
+				iGanadores++;
+			}
+		}
 	}
 }
 
 struct Auto **getAutosGanadoresPorEquipo(struct Equipo **equipos) {
-	if (equipos == NULL) return NULL;
-
-	int nGanadores;
-	struct Auto **ganadores;
-
-	nGanadores = cantGanadores(equipos);
+	int nGanadores = cantGanadores(equipos);
 
 	if (nGanadores == 0) return NULL;
 
-	ganadores = (struct Auto **)malloc(nGanadores * sizeof(struct Auto *));
+	struct Auto **ganadores = (struct Auto **)malloc(nGanadores * sizeof(struct Auto *));
+
 	if (ganadores == NULL) return NULL;
 
 	poblarGanadores(ganadores, equipos);
