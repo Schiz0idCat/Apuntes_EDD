@@ -88,7 +88,7 @@ int cantidadEmpatados(struct Ciudad **ciudades, struct NodoCandidato *headCandid
 		rec = rec->sig;
 	} while (rec != headCandidatos);
 
-	return topVotos;
+	return nEmpatados;
 }
 
 void poblarEmpatados(struct Candidato **empatados, struct Ciudad **ciudades, struct NodoCandidato *headCandidatos, int topVotos) {
