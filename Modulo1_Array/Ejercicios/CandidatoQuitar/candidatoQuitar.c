@@ -20,12 +20,11 @@ int agregarCandidatoAlcalde(struct Candidato **alcaldes, int max, int *pLibre, s
 	int i;
 
 	for (i = 0; i < *pLibre; i++) {
-		if (alcaldes[i] == NULL || strcmp(alcaldes[i]->rut, nuevo->rut) == 0)
+		if (strcmp(alcaldes[i]->rut, nuevo->rut) == 0)
 			return 1;
 	}
 
-	alcaldes[*pLibre] = nuevo;
-	(*pLibre)++;
+	alcaldes[(*pLibre++)] = nuevo;
 
 	return 0;
 }
@@ -48,21 +47,17 @@ void compactarArray(struct Candidato **arr, int n) {
 }
 
 struct Candidato *quitarCandidato(struct EleccionesMunicipales *elecciones, int tamConcejales, int tamAlcaldes, char *rutCandidato) {
-	if (elecciones == NULL) return NULL;
-
 	int i;
-	struct Candidato *candidatoQuitado;
-
-	candidatoQuitado = NULL;
+	struct Candidato *candidatoQuitado = NULL;
 
 	for (i = 0; i < tamConcejales; i++) {
-		if (elecciones->candidatosConcejales[i] == NULL) continue;
+		if (elecciones->candidatosConcejales[i] != NULL) {
+			if (strcmp(elecciones->candidatosConcejales[i]->rut, rutCandidato) == 0) {
+				candidatoQuitado = elecciones->candidatosConcejales[i];
+				elecciones->candidatosConcejales[i] = NULL;
 
-		if (strcmp(elecciones->candidatosConcejales[i]->rut, rutCandidato) == 0) {
-			candidatoQuitado = elecciones->candidatosConcejales[i];
-			elecciones->candidatosConcejales[i] = NULL;
-
-			return candidatoQuitado;
+				return candidatoQuitado;
+			}
 		}
 	}
 
