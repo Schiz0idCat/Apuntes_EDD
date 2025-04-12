@@ -34,7 +34,8 @@
 						16,
 						17,
 						18,
-						19
+						19,
+						20
 					]
 				}
 			],
@@ -68,7 +69,8 @@
 						16,
 						17,
 						18,
-						19
+						19,
+						20
 					]
 				}
 			],
@@ -156,6 +158,13 @@
 					"id" : "inftube::@6890427a1f51a3e7e1df",
 					"jsonFile" : "target-inftube-Debug-04954cae0c848f6efb9b.json",
 					"name" : "inftube",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "inversiones::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-inversiones-Debug-c17c7f43e70bc8bdc9ef.json",
+					"name" : "inversiones",
 					"projectIndex" : 0
 				},
 				{
