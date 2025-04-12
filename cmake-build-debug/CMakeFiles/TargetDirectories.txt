@@ -21,5 +21,6 @@ D:/Programation/Study/Apuntes-EDD/cmake-build-debug/CMakeFiles/circularesSimplem
 D:/Programation/Study/Apuntes-EDD/cmake-build-debug/CMakeFiles/inversiones.dir
 D:/Programation/Study/Apuntes-EDD/cmake-build-debug/CMakeFiles/prueba1.dir
 D:/Programation/Study/Apuntes-EDD/cmake-build-debug/CMakeFiles/formula1.dir
+D:/Programation/Study/Apuntes-EDD/cmake-build-debug/CMakeFiles/losMasVotados.dir
 D:/Programation/Study/Apuntes-EDD/cmake-build-debug/CMakeFiles/edit_cache.dir
 D:/Programation/Study/Apuntes-EDD/cmake-build-debug/CMakeFiles/rebuild_cache.dir

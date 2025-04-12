@@ -26,3 +26,4 @@ add_executable(circularesSimplementeEnlazadas Modulo2_LinkedList/Funciones_Basic
 add_executable(inversiones Modulo2_LinkedList/Ejercicios/Inversiones/inversiones.c)
 add_executable(prueba1 Modulo1_Array/Evaluaciones/Prueba/prueba1.c)
 add_executable(formula1 Modulo2_LinkedList/Ejercicios/Formula1/formula1.c)
+add_executable(losMasVotados Modulo2_LinkedList/Ejercicios/LosMasVotados/losMasVotados.c)

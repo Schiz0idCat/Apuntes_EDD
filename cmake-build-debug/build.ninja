@@ -799,6 +799,39 @@ build formula1.exe: C_EXECUTABLE_LINKER__formula1_Debug CMakeFiles/formula1.dir/
   TARGET_IMPLIB = libformula1.dll.a
   TARGET_PDB = formula1.exe.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target losMasVotados
+
+
+#############################################
+# Order-only phony target for losMasVotados
+
+build cmake_object_order_depends_target_losMasVotados: phony || .
+
+build CMakeFiles/losMasVotados.dir/Modulo2_LinkedList/Ejercicios/LosMasVotados/losMasVotados.c.obj: C_COMPILER__losMasVotados_unscanned_Debug D$:/Programation/Study/Apuntes-EDD/Modulo2_LinkedList/Ejercicios/LosMasVotados/losMasVotados.c || cmake_object_order_depends_target_losMasVotados
+  DEP_FILE = CMakeFiles\losMasVotados.dir\Modulo2_LinkedList\Ejercicios\LosMasVotados\losMasVotados.c.obj.d
+  FLAGS = -g -std=gnu90 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\losMasVotados.dir
+  OBJECT_FILE_DIR = CMakeFiles\losMasVotados.dir\Modulo2_LinkedList\Ejercicios\LosMasVotados
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target losMasVotados
+
+
+#############################################
+# Link the executable losMasVotados.exe
+
+build losMasVotados.exe: C_EXECUTABLE_LINKER__losMasVotados_Debug CMakeFiles/losMasVotados.dir/Modulo2_LinkedList/Ejercicios/LosMasVotados/losMasVotados.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\losMasVotados.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = losMasVotados.exe
+  TARGET_IMPLIB = liblosMasVotados.dll.a
+  TARGET_PDB = losMasVotados.exe.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -859,6 +892,8 @@ build listasDoblementeEnlazadas: phony listasDoblementeEnlazadas.exe
 
 build listasSimplementeEnlazadas: phony listasSimplementeEnlazadas.exe
 
+build losMasVotados: phony losMasVotados.exe
+
 build loteria: phony loteria.exe
 
 build medievo: phony medievo.exe
@@ -879,7 +914,7 @@ build spotify: phony spotify.exe
 #############################################
 # Folder: D:/Programation/Study/Apuntes-EDD/cmake-build-debug
 
-build all: phony autosF1.exe candidatoGanador.exe candidatoQuitar.exe dumbo.exe fundaciones.exe inftube.exe loteria.exe Alumnos.exe controlArrays1.exe spotify.exe aviones.exe listasSimplementeEnlazadas.exe listasDoblementeEnlazadas.exe alumnosEnlazados.exe controlArrays2.exe medievo.exe sistemaTransporte.exe sistemaTelefonico.exe ladrones.exe circularesSimplementeEnlazadas.exe inversiones.exe prueba1.exe formula1.exe
+build all: phony autosF1.exe candidatoGanador.exe candidatoQuitar.exe dumbo.exe fundaciones.exe inftube.exe loteria.exe Alumnos.exe controlArrays1.exe spotify.exe aviones.exe listasSimplementeEnlazadas.exe listasDoblementeEnlazadas.exe alumnosEnlazados.exe controlArrays2.exe medievo.exe sistemaTransporte.exe sistemaTelefonico.exe ladrones.exe circularesSimplementeEnlazadas.exe inversiones.exe prueba1.exe formula1.exe losMasVotados.exe
 
 # =============================================================================
 # Built-in targets

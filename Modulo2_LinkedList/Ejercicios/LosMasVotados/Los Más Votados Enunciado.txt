@@ -1,0 +1,77 @@
+Un país está desarrollando un sistema para procesar los resultados de sus elecciones presidenciales. El sistema debe ser
+capaz de determinar cuáles candidatos recibieron la mayor cantidad de votos a nivel nacional. Para ello, se han definido
+varias estructuras que representan votantes, candidatos, ciudades y el país en sí.
+
+A continuación, se describe el diseño del sistema de forma simplificada:
+
+● struct Candidato: Representa a un candidato a la presidencia.
+    ● numero: número identificador del candidato.
+    ● nombre: nombre del candidato.
+    ● partidoPolitico: nombre del partido al que pertenece.
+
+● struct NodoCandidato: Nodo de una lista circular simplemente enlazada de candidatos.
+    ● candidato: puntero al candidato almacenado.
+    ● sig: puntero al siguiente nodo en la lista.
+
+● struct Votante: Representa a una persona que vota.
+    ● id: identificador único del votante.
+    ● nombre: nombre del votante.
+    ● voto: puntero al candidato al que votó.
+
+● struct NodoVotante: Nodo de una lista simplemente enlazada de votantes, con nodo fantasma.
+    ● votante: puntero al votante almacenado.
+    ● sig: puntero al siguiente nodo en la lista.
+
+● struct Ciudad: Representa una ciudad dentro del país.
+    ● numeroUnico: identificador único de la ciudad.
+    ● nombre: nombre de la ciudad.
+    ● nombreAlcalde: nombre del alcalde.
+    ● votantes: puntero al primer nodo de la lista de votantes registrados en la ciudad.
+
+● struct Pais: Representa el país completo.
+    ● nombrePresidente: nombre del presidente actual.
+    ● nombre: nombre del país.
+    ● ciudades: arreglo de punteros a las ciudades (de tamaño maxCiudades).
+    ● candidatos: puntero al primer nodo de la lista circular de candidatos.
+
+struct Candidato {
+    int numero;
+    char *nombre;
+    char *partidoPolitico;
+};
+
+struct NodoCandidato { // lista circular
+    struct Candidato *candidato;
+    struct NodoCandidato *sig;
+};
+
+struct Votante {
+    int id;
+    char *nombre;
+    struct Candidato *voto;
+};
+
+struct NodoVotante {
+    struct Votante *votante;
+    struct NodoVotante *sig;
+};
+
+struct Ciudad {
+    int numeroUnico;
+    char *nombre;
+    char *nombreAlcalde;
+    struct NodoVotante *votantes;
+};
+
+struct Pais {
+    char *nombrePresidente;
+    char *nombre;
+    struct Ciudad **ciudades;
+    struct NodoCandidato *candidatos;
+};
+
+Debes implementar la siguiente función:
+
+1.- struct Candidato **candidatosMasVotados(struct Pais *pais);
+Esta función debe devolver un arreglo dinámico con todos los candidatos que hayan recibido la mayor cantidad de votos en
+el país. El arreglo se debe ser del tamaño exacto de la cantidad de candidatos con la mayor cantidad de votos
