@@ -8,12 +8,7 @@ struct Compra {
 };
 
 float promedioCompras(struct Compra **compras, int max) {
-	if (compras == NULL) return 0.0f;
-
-	int i, totalMonto, totalClientes;
-
-	totalMonto = 0;
-	totalClientes = 0;
+	int i, totalMonto = 0, totalClientes = 0;
 
 	for (i = 0; i < max; i++) {
 		if (compras[i] == NULL) continue;

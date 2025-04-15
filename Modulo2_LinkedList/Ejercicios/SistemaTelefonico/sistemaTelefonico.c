@@ -21,7 +21,7 @@ struct Plan {
 	int valor;
 };
 
-struct NodoPlan {
+struct NodoPlan { // nodo fantasma
 	struct Plan *dataPlan;
 	struct NodoPlan *sig;
 };

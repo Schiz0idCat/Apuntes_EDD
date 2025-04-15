@@ -75,3 +75,13 @@ Debes implementar la siguiente función:
 1.- struct Candidato **candidatosMasVotados(struct Pais *pais);
 Esta función debe devolver un arreglo dinámico con todos los candidatos que hayan recibido la mayor cantidad de votos en
 el país. El arreglo se debe ser del tamaño exacto de la cantidad de candidatos con la mayor cantidad de votos
+
+
+
+PISTAS:
+1.- hacer función que cuente los votos en una ciudad
+2.- hacer función que cuente los votos en un país (que llame a la función anterior)
+3.- hacer función que retorne la cantidad de votos máxima
+4.- hacer función que retorna la cantidad de candidatos con esa cantidad de votos
+5.- hacer función que poble el array de candidatos empatados
+
