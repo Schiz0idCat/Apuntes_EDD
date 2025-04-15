@@ -17,23 +17,25 @@ struct Nodo *crearNodo(int valor) {
 	return nuevo;
 }
 
-void enlazarNodo(struct Nodo **head, struct Nodo *nodo) {
-	if (nodo == NULL) return; // por si crearNodo() es usado como parámetro y no se alcanza a validar su valor retornado
+int enlazarNodo(struct Nodo **head, struct Nodo *nuevo) {
+	if (nuevo == NULL) return 1; // por si crearNodo() es usado como parámetro y no se alcanza a validar su retorno
 
-	if (*head == NULL) {
-		*head = nodo;
+	if (*head == NULL) { // Si no hay elementos en la lista
+		*head = nuevo;
 		(*head)->sig = *head;
-		return;
+
+		return 0;
 	}
 
 	struct Nodo *rec = *head;
 
-	while (rec->sig != *head) {
+	while (rec->sig != *head) // Recorremos la lista hasta el último elemento
 		rec = rec->sig;
-	}
 
-	rec->sig = nodo;
-	nodo->sig = *head;
+	rec->sig = nuevo;
+	nuevo->sig = *head;
+
+	return 0;
 }
 
 struct Nodo *buscarNodo(struct Nodo *head, int valorBuscado) {
@@ -61,11 +63,10 @@ int modificarNodo(struct Nodo *head, int valorViejo, int valorNuevo) {
 
 
 int desenlazarNodo(struct Nodo **head, int valor) {
-	// CASO ESPECIAL: HAY QUE ELIMINAR EL HEAD
-	if ((*head)->valor == valor) {
-		if ((*head)->sig == *head) // solo un nodo
+	if ((*head)->valor == valor) { // hay que eliminar el head
+		if ((*head)->sig == *head)    // solo un nodo
 			*head = NULL;
-		else { // múltiples nodos
+		else {                        // múltiples nodos
 			struct Nodo *ultimo = *head;
 
 			while (ultimo->sig != *head)
@@ -78,7 +79,6 @@ int desenlazarNodo(struct Nodo **head, int valor) {
 		return 0;
 	}
 
-	// CASO GENERAL: HAY QUE ELIMINAR UN NODO DIFERENTE AL HEAD
 	struct Nodo *act = (*head)->sig, *ant = *head;
 
 	while (act != *head) {

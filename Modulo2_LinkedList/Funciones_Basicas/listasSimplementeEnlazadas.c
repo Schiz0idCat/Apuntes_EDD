@@ -2,28 +2,21 @@
 #include <stdlib.h>
 
 struct Nodo {
-	int valor;			// Contenido del nodo
-	struct Nodo *sig;	// Puntero al siguiente nodo
+	int valor;           // Contenido del nodo
+	struct Nodo *sig;    // Puntero al siguiente nodo
 };
 
-struct Nodo *crearNodo(int valor) { // Se recibe por parámetro el elemento que queremos agregar
-	struct Nodo *nuevo;
+struct Nodo *crearNodo(int valor) {
+	struct Nodo *nuevo = (struct Nodo *)malloc(sizeof(struct Nodo));
 
-	nuevo = (struct Nodo *)malloc(sizeof(struct Nodo)); // Se reserva memoria para cada nodo nuevo
-
-	if (nuevo == NULL) return NULL;
-
-	nuevo->valor = valor;		// Asignando el elemento
-	nuevo->sig = NULL;			// Asignando el siguiente nodo;
+	nuevo->valor = valor;
+	nuevo->sig = NULL;
 
 	return nuevo;
 }
 
-// El head se recibe como doble puntero en caso de tener que modificar el primer elemento
-// Si NO hay elementos en la lista, se debe asignar al head (modificando el primer elemento)
-// En caso contrario, no se asigna al head (no se modifica el primer elemento) y se añade el nodo al final de la lista
 int enlazarNodo(struct Nodo **head, struct Nodo *nuevo) {
-	if (head == NULL || nuevo == NULL) return 1;
+	if (nuevo == NULL) return 1; // por si crearNodo() es usado como parámetro y no se alcanza a validar su retorno
 
 	if (*head == NULL) { // Si no hay elementos en la lista
 		*head = nuevo; // Se asigna nuevo al head
@@ -31,12 +24,9 @@ int enlazarNodo(struct Nodo **head, struct Nodo *nuevo) {
 		return 0;
 	}
 
-	struct Nodo *rec; // rec viene de recorrido, será una copia del puntero head que usaremos para recorrer la lista
+	struct Nodo *rec = *head;
 
-	rec = *head;
-
-	// Recorremos la lista
-	while (rec->sig != NULL)
+	while (rec->sig != NULL) // Recorremos la lista hasta el último elemento
 		rec = rec->sig;
 
 	rec->sig = nuevo;
@@ -55,11 +45,7 @@ struct Nodo *buscarNodo(struct Nodo *head, int valor) {
 }
 
 int modificarNodo(struct Nodo *head, int valorViejo, int valorNuevo) {
-	if (head == NULL) return 1;
-
-	struct Nodo *nodoBuscado;
-
-	nodoBuscado = buscarNodo(head, valorViejo);
+	struct Nodo *nodoBuscado = buscarNodo(head, valorViejo);
 
 	if (nodoBuscado == NULL) return 1;
 
@@ -69,20 +55,18 @@ int modificarNodo(struct Nodo *head, int valorViejo, int valorNuevo) {
 }
 
 struct Nodo *desenlazarNodo(struct Nodo **head, int valor) {
-	if (head == NULL || *head == NULL) return NULL;
-
 	struct Nodo *act, *prev; // nodo acutal, nodo previo
 
 	act = *head;
 	prev = NULL;
 
-	if (act->valor == valor) { // Si hay que eliminar el head
+	if ((*head)->valor == valor) { // hay que eliminar el head
 		*head = act->sig;
 
 		return act;
 	}
 
-	while (act != NULL && act->valor != valor) {
+	while (act != NULL && act->valor != valor) { // recorremos la lista hasta encontrar el valor buscado
 		prev = act;
 		act = act->sig;
 	}

@@ -2,16 +2,12 @@
 #include <stdlib.h>
 
 struct Nodo {
-	int valor;
-	struct Nodo *prev, *next;
+	int valor;                   // Contenido del nodo
+	struct Nodo *prev, *next;    // Puntero al siguiente nodo y al anterior
 };
 
 struct Nodo *crearNodo(int valor) {
-	struct Nodo *nuevo;
-
-	nuevo = (struct Nodo *)malloc(sizeof(struct Nodo));
-
-	if (nuevo == NULL) return NULL;
+	struct Nodo *nuevo = (struct Nodo *)malloc(sizeof(struct Nodo));
 
 	nuevo->valor = valor;
 	nuevo->prev = NULL;
@@ -21,19 +17,17 @@ struct Nodo *crearNodo(int valor) {
 }
 
 int enlazarNodo(struct Nodo **head, struct Nodo *nuevo) {
-	if (head == NULL || nuevo == NULL) return 1;
+	if (nuevo == NULL) return 1; // por si crearNodo() es usado como parámetro y no se alcanza a validar su retorno
 
-	if (*head == NULL) {
+	if (*head == NULL) { // Si no hay elementos en la lista
 		*head = nuevo;
 
 		return 0;
 	}
 
-	struct Nodo *rec;
+	struct Nodo *rec = *head;
 
-	rec = *head;
-
-	while (rec->next != NULL)
+	while (rec->next != NULL) // Recorremos la lista hasta el último elemento
 		rec = rec->next;
 
 	rec->next = nuevo;
@@ -53,11 +47,7 @@ struct Nodo *buscarNodo(struct Nodo *head, int valor) {
 }
 
 int modificarNodo(struct Nodo *head, int valorViejo, int valorNuevo) {
-	if (head == NULL) return 1;
-
-	struct Nodo *nodoBuscado;
-
-	nodoBuscado = buscarNodo(head, valorViejo);
+	struct Nodo *nodoBuscado = buscarNodo(head, valorViejo);
 
 	if (nodoBuscado == NULL) return 1;
 
@@ -67,24 +57,24 @@ int modificarNodo(struct Nodo *head, int valorViejo, int valorNuevo) {
 }
 
 struct Nodo *desenlazarNodo(struct Nodo **head, int valor) {
-	if (head == NULL || *head == NULL) return NULL;
-
-	struct Nodo *nodoEliminar;
-
-	nodoEliminar = buscarNodo(*head, valor);
+	struct Nodo *nodoEliminar = buscarNodo(*head, valor);
 
 	if (nodoEliminar == NULL) return NULL; // valor no encontrado
 
-	if (nodoEliminar->prev == NULL) { // si es el primero
+	if (nodoEliminar->prev == NULL) { // hay que eliminar el head
 		*head = nodoEliminar->next;
 
-		if (*head != NULL) (*head)->prev = NULL;
+		if (*head != NULL)
+			(*head)->prev = NULL;
 	}
 	else
 		nodoEliminar->prev->next = nodoEliminar->next;
 
 	if (nodoEliminar->next != NULL) // si nodoEliminar no es el último
 		nodoEliminar->next->prev = nodoEliminar->prev;
+
+	nodoEliminar->next = NULL;
+	nodoEliminar->prev = NULL;
 
 	return nodoEliminar;
 }
