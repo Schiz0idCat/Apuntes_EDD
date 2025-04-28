@@ -1,0 +1,52 @@
+Dado el siguiente contexto sobre votaciones:
+
+struct Candidato {
+    int idCandidato;
+    char *nombre;
+    char *nombrePartidoPolitico;
+};
+
+struct NodoCandidato {
+    struct Candidato *datosCandidato;
+    struct NodoCandidato *izq, *der;
+};
+
+struct Region {
+    int numeroRegion;
+    char *nombre;
+    struct Votante **votantes;
+    int cantMaximaVotantes;
+};
+
+struct NodoRegion {
+    struct Region *datosRegion;
+    struct NodoRegion *sig;
+};
+
+struct Votante {
+    char *rut;
+    char *nombre;
+    struct Candidato *voto;
+};
+
+struct Servel {
+    char *nombreEncargado;
+    struct NodoRegion *regiones;
+    struct NodoCandidato *candidatos;
+};
+
+
+Debes implementar la siguiente función:
+
+1.- float porcetajeVotosCandidato(struct Servel *elecciones, int idCandidato);
+Recibe una referencia al servel y el id de un candidato. Debes retornar el porcentaje
+de votos obtenidos por el candidato.
+
+
+
+PISTAS:
+1.- hacer función que busque al candidato
+2.- hacer función que cuente los votos obtenidos en una región
+3.- hacer función que cuente los votos obtenidos en el país
+4.- hacer función que cuente los votantes de una región
+5.- hacer función que cuente los votantes del país

@@ -1,0 +1,45 @@
+dada la siguiente estrucutra:
+
+#define maxDestinatarios 5000
+
+struct Destinatario {
+    char *rut;
+    char *nombre;
+    char *direccion;
+};
+
+struct Reparto {
+    int numero;
+    char *fecha;
+    char *ciudadOrigen;
+    struct Destinatario *destino;
+};
+
+struct NodoReparto {
+    struct Reparto *datosReparto;
+    struct NodoReparto *sig;
+};
+
+struct ServiExpress {
+    struct NodoReparto *headRepartos;
+    struct Destinatario **destinatarios;
+};
+
+Debes programar las siguientes funciones:
+
+1.- struct Destinatario *destinatarioMayorRepartos(struct ServiExpress *serviExpress)
+Recibe una referencia a serviExpress, debes retornar el destinatario con más repartos.
+(Para esta función y sus funciones auxiliares, suponga que no hay nodo fantasma)
+
+2.- struct Reparto *quitarRepartoSinNodoFantasma(struct NodoReparto **repartos, int numeroReparto)
+Recibe una referencia a la lista de repartos y el id de un reparto, debes eliminar el reparto con dicho id
+y retornarlo. (Para esta función y sus funciones auxiliares, suponga que NO HAY nodo fantasma)
+
+3.- struct Reparto *quitarRepartoConNodoFantasma(struct NodoReparto **repartos, int numeroReparto)
+Recibe una referencia a la lista de repartos y el id de un reparto, debes eliminar el reparto con dicho id
+y retornarlo. (Para esta función y sus funciones auxiliares, suponga que HAY nodo fantasma)
+
+
+
+PISTAS:
+1.- Hacer una función que retorne la cantidad de repartos para un destinatario.
